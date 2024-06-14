@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1718385288 source:c:\users\juani\onedrive\documentos\codeblocks\guia6\cienoescalerafinalutn\modounjugador.cpp
+	<iostream>
+	<ctime>
+	"funciones.h"
+	"rlutil.h"
+	"misFunciones.h"
+
+1718371140 c:\users\juani\onedrive\documentos\codeblocks\guia6\cienoescalerafinalutn\misfunciones.h
+
+1718383535 source:c:\users\juani\onedrive\documentos\codeblocks\guia6\cienoescalerafinalutn\main.cpp
+	<iostream>
+	<ctime>
+	"misFunciones.h"
+
+1718374467 source:c:\users\juani\onedrive\documentos\codeblocks\guia6\cienoescalerafinalutn\dados.cpp
+	<iostream>
+	"rlutil.h"
+	"misFunciones.h"
+
+1718385513 c:\users\juani\onedrive\documentos\codeblocks\guia6\cienoescalerafinalutn\funciones.h
+	<iostream>
+	<ctime>
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+
+1718371080 c:\users\juani\onedrive\documentos\codeblocks\guia6\cienoescalerafinalutn\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
