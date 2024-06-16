@@ -40,3 +40,29 @@
 	<sys/types.h>
 	<sys/time.h>
 
+1718578887 source:c:\users\pc\onedrive\escritorio\cienoescalerautn\dados.cpp
+	<iostream>
+	"rlutil.h"
+	"misFunciones.h"
+
+1718578887 c:\users\pc\onedrive\escritorio\cienoescalerautn\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1718578887 c:\users\pc\onedrive\escritorio\cienoescalerautn\misfunciones.h
+
+1718578887 source:c:\users\pc\onedrive\escritorio\cienoescalerautn\main.cpp
+	<iostream>
+	<ctime>
+	"misFunciones.h"
+

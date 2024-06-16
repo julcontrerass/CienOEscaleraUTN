@@ -17,20 +17,14 @@ void modoUnJugador()
     getline(cin,nombre);
     if(nombre==""){
         system("cls");
-        cout << "Ingrese un nombre o volver  al men£ principal..." << endl;
+        cout << "Ingrese un nombre o volver al menu principal..." << endl;
         getline(cin,nombre);
         if(nombre==""){
             system("cls");
             main();
         }
     }
-    system("cls");
-    cout << "------------------------------------" << endl;
-    cout << "----- MODO DE JUEGO UN JUGADOR -----" << endl;
-    cout << "------------------------------------" << endl;
-    cout << "-- BIENVENIDO " << nombre << " --" << endl;
-    cout << "Para iniciar el juego presione el espacio..." << endl;
-    rlutil::anykey(); // es como un system pause
+
     while(puntajeTotal<=100) //mientras puntaje total sea menor a 100
     {
         puntajeMaximo = 0;
@@ -42,7 +36,10 @@ void modoUnJugador()
             cout << "JUGADOR: " << nombre << endl;
             cout << "TIRADA " << i + 1 << endl; //indica en qu‚ tirada va (est  en 0+1, o sea arranca en 1)
             cout << "TIRADA 1: " << Dados[0] << " TIRADA 2: " << Dados[1] << " TIRADA 3: " <<  Dados [2] << endl; //cada dado[i] muestra el valor de su tirada
-            cout << "puntaje total: " << puntajeTotal; //muestra el puntaje total
+            cout << "puntaje total: " << puntajeTotal << endl; //muestra el puntaje total
+            cout << "Presionar espacio para lanzar los dados " << endl;
+            rlutil::anykey(); // es como un system pause
+
             for (int j=0; j<6; j++)
             {
                 Dados[i] += tirar((j + 1) *10,rand()% 10 +6); //muestra el valor ALEATORIO de cada dado
