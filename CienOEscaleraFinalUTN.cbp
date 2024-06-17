@@ -32,7 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="CienOEscaleraFinalUTN.cbp" />
+		<Unit filename="CienOEscaleraFinalUTN.depend" />
+		<Unit filename="CienOEscaleraFinalUTN.layout" />
+		<Unit filename="README.md" />
+		<Unit filename="dados.cpp" />
+		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="misFunciones.h" />
+		<Unit filename="modoUnJugador.cpp" />
+		<Unit filename="puntaje.cpp" />
+		<Unit filename="rlutil.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

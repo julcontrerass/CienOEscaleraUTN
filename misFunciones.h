@@ -6,6 +6,7 @@ void lanzarDados();
 int main();
 void modoUnJugador();
 int tirar (int posx, int posy);
+int puntaje(int vNumDados[]);
 
 
 #endif // MISFUNCIONES_H_INCLUDED

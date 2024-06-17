@@ -4,10 +4,12 @@
 #include "rlutil.h"
 #include "misFunciones.h"
 using namespace std;
+int puntajeMayor =0;
+string nombreDelMayorPuntaje;
 void modoUnJugador()
 {
     string nombre; //habr  variable con ingreso de letras
-    int puntajeTotal = 0,  puntajeMaximo,Dados[3]; //habr  variables enteras
+    int puntajeTotal = 0,Dados[6], ronda=1,maximoDeLaRonda =0,opcion; //habr  variables enteras
     ponerCero(Dados, 3); //pone en 0 el valor de los dados
     cout << "------------------------------------" << endl;
     cout << "----- MODO DE JUEGO UN JUGADOR -----" << endl;
@@ -15,11 +17,13 @@ void modoUnJugador()
     cout << " INGRESE EL NOMBRE DEL JUGADOR PARA INCIAR" << endl;
     cin.ignore();
     getline(cin,nombre);
-    if(nombre==""){
+    if(nombre=="")
+    {
         system("cls");
         cout << "Ingrese un nombre o volver al menu principal..." << endl;
         getline(cin,nombre);
-        if(nombre==""){
+        if(nombre=="")
+        {
             system("cls");
             main();
         }
@@ -27,50 +31,96 @@ void modoUnJugador()
 
     while(puntajeTotal<=100) //mientras puntaje total sea menor a 100
     {
-        puntajeMaximo = 0;
+        int puntajeTiradas[3];
+        ponerCero(puntajeTiradas, 3);
         system("cls");
         srand(time (0)); // tira random pero no se que cosa
         rlutil::saveDefaultColor(); // deja el color negro ya que es color por defecto
         for (int i=0 ; i<3; i++)
         {
-            cout << "JUGADOR: " << nombre << endl;
-            cout << "TIRADA " << i + 1 << endl; //indica en qu‚ tirada va (est  en 0+1, o sea arranca en 1)
-            cout << "TIRADA 1: " << Dados[0] << " TIRADA 2: " << Dados[1] << " TIRADA 3: " <<  Dados [2] << endl; //cada dado[i] muestra el valor de su tirada
-            cout << "puntaje total: " << puntajeTotal << endl; //muestra el puntaje total
+
+            system("cls");
+            cout << "JUGADOR: " << nombre ;
+            cout << " | RONDA: " << ronda;
+            cout << " | PUNTAJE TOTAL: " << puntajeTotal << endl; //muestra el puntaje total
+            cout << "------------------------------------ " << endl;
+            cout << "MAXIMO PUNTAJE DE LA RONDA " << maximoDeLaRonda << endl;
+            cout << "LANZAMIENTO NUMERO " << i +1 << endl; //indica en qu‚ tirada va (est  en 0+1, o sea arranca en 1)
+            cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " <<  puntajeTiradas[2] << endl; //cada dado[i] muestra el valor de su tirada
+            cout << endl;
+            cout << "EL MEJOR JUGADOR ES: " << nombreDelMayorPuntaje <<  " CON " << puntajeMayor << " PUNTOS" << endl;
             cout << "Presionar espacio para lanzar los dados " << endl;
+
             rlutil::anykey(); // es como un system pause
 
             for (int j=0; j<6; j++)
             {
-                Dados[i] += tirar((j + 1) *10,rand()% 10 +6); //muestra el valor ALEATORIO de cada dado
+                Dados[j] = tirar((j + 1) *10,rand()% 10 +6); //muestra el valor ALEATORIO de cada dado
             }
+//            cargarVector(Dados , 6);
+
+            puntajeTiradas[i] = puntaje(Dados);
+
             rlutil::resetColor(); //resetea el color al negro
             rlutil::anykey(); // es como un system pause
+            ponerCero(Dados, 3);
 
-            if (Dados[0] > puntajeMaximo ) //todo este if indica cu l de las 3 tiradas ser  la que tiene el valor maximo para quedarnos con esa tirada.
-            {
-                puntajeMaximo = Dados[0];
-            }
-            else if(Dados[1]>puntajeMaximo)
-            {
-                puntajeMaximo=Dados[1];
-            }
-            else if(Dados[2]>puntajeMaximo)
-            {
-                puntajeMaximo=Dados[2];
-            }
-            system("cls");
         }
-        puntajeTotal += puntajeMaximo; //al total se le acumula una de esas 3 tiradas(el valor mayor de las 3 tiradas)
-        ponerCero(Dados, 3); //vuelve a poner en 0 el valor de los dados
+        int ubiCero = minimoVector(puntajeTiradas, 3);
+        if (puntajeTiradas[ubiCero] == 0 )
+        {
+            puntajeTotal = 0;
+        }
+        else
+        {
+            int ubi = maximoVector(puntajeTiradas, 3);
+            maximoDeLaRonda = puntajeTiradas[ubi];
+            puntajeTotal += puntajeTiradas[ubi];//al total se le acumula una de esas 3 tiradas(el valor mayor de las 3 tiradas)
+        }
+        ronda++;
+
+    }
+    if (puntajeTotal>puntajeMayor)
+    {
+        puntajeMayor=puntajeTotal;
+        nombreDelMayorPuntaje=nombre;
     }
     system("cls");
-    cout << "FELICIDADES. GANASTE EL JUEGO. LLEGASTE A 100 PUNTOS.";
+    cout << endl;
+    cout << "FELICIDADES. GANASTE EL JUEGO. LLEGASTE A " << puntajeTotal << " puntos" << endl;
+    cout << endl;
+    cout << "===============================" << endl;
+    cout << " 1- EMPEZAR EL JUEGO DE NUEVO" << endl;
+    cout << " 2- PUNTUACION MAS ALTA" << endl;
+    cout << " 3- SIMULACION" << endl;
+    cout << " 0- FINALIZAR JUEGO" << endl;
+    cout << "===============================" << endl;
+    cout << endl;
+    cout << "INGRESE SU OPCION: ";
+    cin >> opcion;
+
+    switch (opcion)
+    {
+    case 1:
+        system ("cls");
+        modoUnJugador();
+        break;
+    case 2:
+        system ("cls");
+//      puntuacion mas alta
+        break;
+    case 3:
+        system ("cls");
+        cout << " ESTAMOS EN EL MENU MOSTRANDO LA PUNTUACION";
+        break;
+    case 0:
+        main();
+    }
     rlutil::resetColor();
+
+
 }
-//falta: hacer jugadas (escalera, sexteto, etc)
-//hacer cartel de "GANASTE"
-//hacer opcion de jugar de nuevo
-//ver puntuacion una vez que finaliza
+
 //opcion de ir a todas las puntuaciones
-//comparar mayor puntaje
+//corregir la ubi de los dados cuando lanzamos
+
