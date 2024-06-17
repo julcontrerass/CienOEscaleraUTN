@@ -6,6 +6,6 @@ Creacion del juego Cien o Escalera Realizado con C++ para la materia Programacio
 ## Participantes
 
 - [Julian contreras](https://github.com/julcontrerass)
-- [Liz Sandra Mamani Flores](https://github.com/julcontrerass)
+- [Liz Sandra Mamani Flores](https://github.com/LizFl0res)
 - [Juan Ignacio Nemi](https://github.com/nemi1414)
 - [Lucia Schiro](https://github.com/LuciaShro)
