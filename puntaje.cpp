@@ -4,27 +4,10 @@
 using namespace std;
 int puntaje (int vNumDados[])
 {
-    int puntajeAux, contador, vContDados[6];
+    int puntajeAux=0, vContDados[6];
+    bool sexTeto=true;
+
     ponerCero(vContDados, 6);
-//    for (int i=1; i<=6; i++)
-//    {
-//        contador = contarNumerosRepetidos(vNumDados, i, 6);
-//
-//        if(contador==6 && vNumDados[0] != 6)
-//        {
-//            puntajeAux= vNumDados[0]*10;
-//        }
-//        else if(contador == 6 && vNumDados[0] == 6)
-//        {
-//            puntajeAux=0;
-//        }
-//        else
-//        {
-//            puntajeAux = sumarVector(vNumDados, 6 );
-//        }
-//
-//
-//    }
     for (int i = 0; i < 6; i++)
     {
         switch (vNumDados[i])
@@ -51,12 +34,18 @@ int puntaje (int vNumDados[])
     }
     if (vContDados[5] == 6) {
         puntajeAux = 0;
+        sexTeto=false;
+
     }
     for (int i = 0; i < 5; i++) {
         if (vContDados[i] == 6) {
             puntajeAux = vNumDados[i] * 10;
         }
     }
+    if (puntajeAux == 0 && sexTeto==true){
+        puntajeAux += sumarVector(vNumDados, 6 );
+    }
+
 
     ordenarVector(vNumDados, 6 );
 
@@ -95,7 +84,7 @@ int puntaje (int vNumDados[])
         cout << "------------------------------------" << endl;
         cout << "------- HICISTE UNA ESCALERA -------" << endl;
         cout << "------------------------------------" << endl;
-        return 0;
+        puntajeAux = 100;
     }
 
     return puntajeAux;
