@@ -1,6 +1,6 @@
 # Proyecto grupal juego cien o escalera UTN
 
-Creacion del juego Cien o Escalera Realizado con C++ para la materia Programacion 1 curada en la UTN
+Creacion del juego Cien o Escalera Realizado con C++ para la materia Programacion 1 cursada en la UTN
 
 
 ## Participantes
