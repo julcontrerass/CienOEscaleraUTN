@@ -37,10 +37,11 @@ int main()
         break;
     case 4:
         system ("cls");
-//        Simulacion();
+        Simulacion();
         break;
     case 0:
         return 0;
     }
     return 0;
 }
+
