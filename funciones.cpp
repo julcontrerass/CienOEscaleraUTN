@@ -1,30 +1,51 @@
 #include <iostream>
 #include "funciones.h"
+#include "rlutil.h"
 using namespace std;
 
+//NUESTRAS FUNCIONES
+void copa(int x, int y )
+{
+    rlutil::hidecursor();
+    rlutil::locate(x,y);
+    cout<< "("<< (char)219 << (char)219 << (char)219 << (char)219 << (char)219 << ")" << endl;
+    rlutil::locate(x,++y);
+    cout<< " " << (char)223 << (char)219 << (char)219 << (char)219 << (char)223 << endl;
+    rlutil::locate(x,++y);
+    cout<< " " << (char)220 << (char)220 << (char)219 << (char)220 << (char)220 << endl;
+
+}
 
 /// Desarrollo de funciones / Definiciones
-int posicionNumeroEnVector(int v[],int tam, int numero){
+int posicionNumeroEnVector(int v[],int tam, int numero)
+{
     int i;
-    for(i=0;i<tam;i++){
+    for(i=0; i<tam; i++)
+    {
         if(v[i]==numero) return i;
-        }
+    }
     return -1;
 }
-int minimoVector(int v[], int tam){
+int minimoVector(int v[], int tam)
+{
     int i, posMin=0;
-    for(i=1;i<tam;i++){
-        if(v[i]<v[posMin]) {
-                posMin=i;
+    for(i=1; i<tam; i++)
+    {
+        if(v[i]<v[posMin])
+        {
+            posMin=i;
         }
     }
     return posMin;
 }
-void ordenarVector(int v[], int tam ){
+void ordenarVector(int v[], int tam )
+{
     int i,j, posmin, aux;
-    for(i=0;i<tam-1;i++){
+    for(i=0; i<tam-1; i++)
+    {
         posmin=i;
-        for(j=i+1;j<tam;j++){
+        for(j=i+1; j<tam; j++)
+        {
             if(v[j]<v[posmin]) posmin=j;
         }
         aux=v[i];
@@ -33,76 +54,95 @@ void ordenarVector(int v[], int tam ){
     }
 }
 
-int maximoVector(int v[], int tam){
+int maximoVector(int v[], int tam)
+{
     int i, posMax=0;
-    for(i=1;i<tam;i++){
-        if(v[i]>v[posMax]) {
-                posMax=i;
+    for(i=1; i<tam; i++)
+    {
+        if(v[i]>v[posMax])
+        {
+            posMax=i;
         }
     }
     return posMax;
 }
 
-void cargarAleatorio(int v[], int tam, int limite){
-  int i;
-  srand(time(NULL));
-  for( i=0; i<tam; i++ ){
+void cargarAleatorio(int v[], int tam, int limite)
+{
+    int i;
+    srand(time(NULL));
+    for( i=0; i<tam; i++ )
+    {
         v[i]=(rand()%limite)+1;
-  }
+    }
 }
 
-void mostrarVector(int v[], int tam){
+void mostrarVector(int v[], int tam)
+{
     int i;
-    for(i=0;i<tam;i++){
+    for(i=0; i<tam; i++)
+    {
         cout<<v[i]<<"\t";
     }
 }
 
 
-int contarNumerosRepetidos(int v[], int numero, int tam){
+int contarNumerosRepetidos(int v[], int numero, int tam)
+{
     int i, cant=0;
-    for(i=0;i<tam;i++){
+    for(i=0; i<tam; i++)
+    {
         if(v[i]==numero) cant++;
-        }
+    }
     return cant;
 }
 
 
-void ponerCero(int v[], int tam){
+void ponerCero(int v[], int tam)
+{
     int i;
-    for(i=0;i<tam;i++){
+    for(i=0; i<tam; i++)
+    {
         v[i]=0;
     }
 }
 
 
-int sumarVector(int v[], int tam ){
+int sumarVector(int v[], int tam )
+{
     int i, suma=0;
-    for(i=0;i<tam;i++){
+    for(i=0; i<tam; i++)
+    {
         suma+=v[i];
     }
     return suma;
 }
 
 
-void copiarVector(int v[], int v2[],int tam ){
+void copiarVector(int v[], int v2[],int tam )
+{
     int i;
-    for(i=0;i<tam;i++){
+    for(i=0; i<tam; i++)
+    {
         v2[i]=v[i];
     }
 }
 
-bool compararVectores(int v[], int v2[],int tam ){
-   int i;
-    for(i=0;i<tam;i++){
+bool compararVectores(int v[], int v2[],int tam )
+{
+    int i;
+    for(i=0; i<tam; i++)
+    {
         if(v2[i]!=v[i]) return false;
     }
     return true;
 }
 
-void cargarVector(int v[], int tam){
+void cargarVector(int v[], int tam)
+{
     int i;
-    for(i=0;i<tam;i++){
+    for(i=0; i<tam; i++)
+    {
         cout<<"INGRESE NUMERO: ";
         cin>>v[i];
     }

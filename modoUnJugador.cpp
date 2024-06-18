@@ -7,7 +7,8 @@ using namespace std;
 
 int puntajeMayor[3] {0,0,0};
 string nombreDelMayorPuntaje[3];
-void actualizarRanking(int puntaje, string nombre);
+
+
 
 void modoUnJugador()
 {
@@ -87,7 +88,9 @@ void modoUnJugador()
     system("cls");
     cout << endl;
     cout << " ========================================================================" << endl;
-    cout << "  FELICIDADES GANASTE EL JUEGO, LLEGASTE A " << puntajeTotal << " PUNTOS" << endl;
+    cout << endl;
+    cout << "  FELICIDADES GANASTE EL JUEGO, LLEGASTE A " << puntajeTotal << " PUNTOS" << endl ;
+    cout << endl;
     cout << " ========================================================================" << endl;
     cout << endl;
     cout << endl;
@@ -148,16 +151,19 @@ void Puntuacion()
 
     system("cls");
     cout << "=================================" << endl;
-    cout << "-------------RANKING-------------" << endl;
+    cout <<endl;
+    cout << "--           RANKING           --";
+    copa(5 , 2 );
+    copa(23 , 2 );
     cout << "=================================" << endl;
     cout << endl;
-    cout << "PRIMER PUESTO: " << nombreDelMayorPuntaje[0] << " CON " << puntajeMayor[0] << " PUNTOS " << endl;
-    cout << "SEGUNDO PUESTO: " << nombreDelMayorPuntaje[1] << " CON " << puntajeMayor[1] << " PUNTOS " << endl;
-    cout << "TERCER PUESTO: " << nombreDelMayorPuntaje[2] << " CON " << puntajeMayor[2] << " PUNTOS " << endl;
+    cout << " PRIMER PUESTO: " << nombreDelMayorPuntaje[0] << " CON " << puntajeMayor[0] << " PUNTOS " << endl;
+    cout << " SEGUNDO PUESTO: " << nombreDelMayorPuntaje[1] << " CON " << puntajeMayor[1] << " PUNTOS " << endl;
+    cout << " TERCER PUESTO: " << nombreDelMayorPuntaje[2] << " CON " << puntajeMayor[2] << " PUNTOS " << endl;
     cout << endl;
     cout << " ==============================" << endl;
-    cout << "| 1- VOLVER A MENU              |" << endl;
-    cout << "| 0- FINALIZAR JUEGO            |" << endl;
+    cout << "|     1- VOLVER A MENU         |" << endl;
+    cout << "|     0- FINALIZAR JUEGO       |" << endl;
     cout << " ==============================" << endl;
     cout << endl;
     cout << "INGRESE SU OPCION: ";
@@ -175,9 +181,6 @@ void Puntuacion()
     }
 
 }
-
-
-//opcion de ir a todas las puntuaciones
 
 
 

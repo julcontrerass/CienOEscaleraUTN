@@ -31,7 +31,7 @@ void NumDado (int numero, int posx, int posy)
     switch(numero)
     {
     case 1:
-        // POR EJEMPLO EN LA POSICION DE X 3 Y Y2 PINTAMOS UN CUADRADITO CON (char)254
+        // POR EJEMPLO EN LA POSICION DE X 3 Y Y 2 PINTAMOS UN CUADRADITO CON (char)254
         rlutil::locate(posx+3,posy+1);
         cout << (char)254;
         valor = 1;
