@@ -37,11 +37,13 @@ int puntaje (int vNumDados[])
         sexTeto=false;
 
     }
+
     for (int i = 0; i < 5; i++) {
         if (vContDados[i] == 6) {
             puntajeAux = vNumDados[i] * 10;
         }
     }
+
     if (puntajeAux == 0 && sexTeto==true){
         puntajeAux += sumarVector(vNumDados, 6 );
     }

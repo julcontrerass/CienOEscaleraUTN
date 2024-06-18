@@ -57,7 +57,7 @@ void Simulacion()
             cout << "------------------------------------ " << endl;
             cout << "MAXIMO PUNTAJE DE LA RONDA " << maximoDeLaRonda << endl;
             cout << "LANZAMIENTO NUMERO " << i +1 << endl; //indica en qu‚ tirada va (est  en 0+1, o sea arranca en 1)
-            cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " <<  puntajeTiradas[2] << endl; //cada dado[i] muestra el valor de su tirada
+            //cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " <<  puntajeTiradas[2] << endl; //cada dado[i] muestra el valor de su tirada
             cout << endl;
             cout << "Presionar espacio para lanzar los dados " << endl;
 
@@ -69,7 +69,7 @@ void Simulacion()
             puntajeTiradas[i] = puntaje(Dados);
 
             rlutil::resetColor(); //resetea el color al negro
-            ponerCero(Dados, 3);
+            //ponerCero(Dados, 3);
 
 
         }

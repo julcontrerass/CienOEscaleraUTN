@@ -4,8 +4,11 @@
 #include "rlutil.h"
 #include "misFunciones.h"
 using namespace std;
-int puntajeMayor =0;
-string nombreDelMayorPuntaje;
+
+int puntajeMayor[3] {0,0,0};
+string nombreDelMayorPuntaje[3];
+void actualizarRanking(int puntaje, string nombre);
+
 void modoUnJugador()
 {
     string nombre; //habr  variable con ingreso de letras
@@ -43,12 +46,11 @@ void modoUnJugador()
             cout << "JUGADOR: " << nombre ;
             cout << " | RONDA: " << ronda;
             cout << " | PUNTAJE TOTAL: " << puntajeTotal << endl; //muestra el puntaje total
-            cout << "------------------------------------ " << endl;
+            cout << "-------------------------------------------- " << endl;
             cout << "MAXIMO PUNTAJE DE LA RONDA " << maximoDeLaRonda << endl;
             cout << "LANZAMIENTO NUMERO " << i +1 << endl; //indica en qu‚ tirada va (est  en 0+1, o sea arranca en 1)
             cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " <<  puntajeTiradas[2] << endl; //cada dado[i] muestra el valor de su tirada
             cout << endl;
-            cout << "EL MEJOR JUGADOR ES: " << nombreDelMayorPuntaje <<  " CON " << puntajeMayor << " PUNTOS" << endl;
             cout << "Presionar espacio para lanzar los dados " << endl;
 
             rlutil::anykey(); // es como un system pause
@@ -79,11 +81,9 @@ void modoUnJugador()
         ronda++;
 
     }
-    if (puntajeTotal>puntajeMayor)
-    {
-        puntajeMayor=puntajeTotal;
-        nombreDelMayorPuntaje=nombre;
-    }
+
+    actualizarRanking(puntajeTotal, nombre);
+
     system("cls");
     cout << endl;
     cout << "FELICIDADES. GANASTE EL JUEGO. LLEGASTE A " << puntajeTotal << " PUNTOS" << endl;
@@ -107,6 +107,7 @@ void modoUnJugador()
     case 2:
         system ("cls");
 //      puntuacion mas alta
+        Puntuacion();
         break;
     case 3:
         system ("cls");
@@ -116,10 +117,64 @@ void modoUnJugador()
         main();
     }
     rlutil::resetColor();
+}
 
+void actualizarRanking(int puntaje, string nombre)
+{
+    for (int i = 0; i < 3; i++)
+    {
+        if (puntaje > puntajeMayor[i])
+        {
+            // Desplazar los elementos hacia abajo
+            for (int j = 2; j > i; j--)
+            {
+                puntajeMayor[j] = puntajeMayor[j - 1];
+                nombreDelMayorPuntaje[j] = nombreDelMayorPuntaje[j - 1];
+            }
+            // Insertar el nuevo puntaje y nombre
+            puntajeMayor[i] = puntaje;
+            nombreDelMayorPuntaje[i] = nombre;
+            break;
+        }
+    }
+}
+
+void Puntuacion()
+{
+    int opcion;
+
+    system("cls");
+    cout << "=================================" << endl;
+    cout << "-------------RANKING-------------" << endl;
+    cout << "=================================" << endl;
+    cout << endl;
+    cout << "PRIMER PUESTO: " << nombreDelMayorPuntaje[0] << " CON " << puntajeMayor[0] << " PUNTOS " << endl;
+    cout << "SEGUNDO PUESTO: " << nombreDelMayorPuntaje[1] << " CON " << puntajeMayor[1] << " PUNTOS " << endl;
+    cout << "TERCER PUESTO: " << nombreDelMayorPuntaje[2] << " CON " << puntajeMayor[2] << " PUNTOS " << endl;
+    cout << endl;
+    cout << " ==============================" << endl;
+    cout << "| 1- VOLVER A MENU              |" << endl;
+    cout << "| 0- FINALIZAR JUEGO            |" << endl;
+    cout << " ==============================" << endl;
+    cout << endl;
+    cout << "INGRESE SU OPCION: ";
+    cin >> opcion;
+
+    switch (opcion)
+    {
+    case 1:
+        system ("cls");
+        main();
+        break;
+    case 0:
+        return;
+        break;
+    }
 
 }
 
+
 //opcion de ir a todas las puntuaciones
-//corregir la ubi de los dados cuando lanzamos
+
+
 

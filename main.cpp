@@ -6,7 +6,7 @@ using namespace std;
 
 int main()
 {
-    int opcion;
+    int opcion, punatateMax1=0, punatateMax2=0;
     // INICIAMOS EL JUEGO CON UNA BIENVENIDA Y CON OPCIONES DE INICIO DE JUEGOS
     cout << "-----------------------------------------" << endl;
     cout << "-- BIENVENIDO AL JUEGO CIEN O ESCALERA --" << endl;
@@ -14,8 +14,9 @@ int main()
     cout << endl;
     cout << " 1- EMPEZAR NUEVO JUEGO DE UN JUGADOR" << endl;
     cout << " 2- EMPEZAR NUEVO JUEGO DE DOS JUGADORES" << endl;
-    cout << " 3- PUNTUACION MAS ALTA" << endl;
-    cout << " 4- SIMULACION" << endl;
+    cout << " 3- RANKING MODO UN JUGADOR" << endl;
+    cout << " 4- RANKING MODO DOS JUGADORES" << endl;
+    cout << " 5- SIMULACION" << endl;
     cout << " 0- FINALIZAR JUEGO" << endl;
     cout << endl;
     cout << "INGRESE SU OPCION: ";
@@ -29,13 +30,16 @@ int main()
         break;
     case 2:
         system ("cls");
-//        ModoDosJugadores();
         break;
     case 3:
         system ("cls");
-        cout << " ESTAMOS EN EL MENU MOSTRANDO LA PUNTUACION";
+        Puntuacion();
         break;
     case 4:
+        system ("cls");
+        //ranking dos jugadores
+        break;
+    case 5:
         system ("cls");
         Simulacion();
         break;
