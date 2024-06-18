@@ -86,7 +86,10 @@ void modoUnJugador()
 
     system("cls");
     cout << endl;
-    cout << "FELICIDADES. GANASTE EL JUEGO. LLEGASTE A " << puntajeTotal << " PUNTOS" << endl;
+    cout << " ========================================================================" << endl;
+    cout << "  FELICIDADES GANASTE EL JUEGO, LLEGASTE A " << puntajeTotal << " PUNTOS" << endl;
+    cout << " ========================================================================" << endl;
+    cout << endl;
     cout << endl;
     cout << " ==============================" << endl;
     cout << "| 1- EMPEZAR EL JUEGO DE NUEVO  |" << endl;
