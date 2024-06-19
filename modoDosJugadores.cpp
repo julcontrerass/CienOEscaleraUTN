@@ -7,11 +7,10 @@ using namespace std;
 int puntajeMayorDosJugadores[3] {0,0,0};
 string nombreDelMayorPuntajeDosJugadores[3];
 
-
 void modoDosJugadores()
 {
-    string nombre1, nombre2; //habr  variable con ingreso de letras
-    int puntajeTotalJ1 = 0,puntajeTotalJ2 =0,Dados[6], ronda=0,maximoDeLaRondaJ1 =0,maximoDeLaRondaJ2=0,opcion,  tiradasJ1=0,tiradasJ2=0,limRondas; //habr  variables enteras
+    string nombre1, nombre2,opcionRondas; //habr  variable con ingreso de letras
+    int  puntajeTotalJ1 = 0,puntajeTotalJ2 =0,Dados[6], ronda=0,maximoDeLaRondaJ1 =0,maximoDeLaRondaJ2=0,opcion,  tiradasJ1=0,tiradasJ2=0,limRondas; //habr  variables enteras
     bool finaliza=false;
     ponerCero(Dados, 3); //pone en 0 el valor de los dados
     cout << "-------------------------------------" << endl;
@@ -36,8 +35,21 @@ void modoDosJugadores()
     }
     system("cls");
     //Dejamos que el usuario seleccione el limete de las rondas
-    cout<< " INGRESE EL LIMITE DE RONDAS QUE DESEA JUGAR "<<endl;
-    cin>>limRondas;
+    cout << endl;
+    cout << " QUIERE INGRESAR UN LIMITE DE RONDAS? " <<endl;
+    cout << endl;
+    cout << " [ S / N  ]" <<endl;
+    cin >> opcionRondas;
+
+    if (opcionRondas == "n" || opcionRondas == "N"){
+        finaliza = false;
+    }else if (opcionRondas == "s" || opcionRondas == "S"){
+        system("cls");
+        cout << endl;
+        cout<< " INGRESE EL LIMITE DE RONDAS QUE DESEA JUGAR "<<endl;
+        cin>>limRondas;
+    }
+
 
     while( finaliza == false  )
     {
@@ -164,7 +176,7 @@ void modoDosJugadores()
             maximoDeLaRondaJ2 = puntajeTiradas[ubi];
             puntajeTotalJ2 += puntajeTiradas[ubi];//al total se le acumula una de esas 3 tiradas(el valor mayor de las 3 tiradas)
         }
-
+        //condiciones para que finalice el juego
         if (puntajeTotalJ1>=100)
         {
             finaliza=true;
@@ -172,7 +184,9 @@ void modoDosJugadores()
         else if (puntajeTotalJ2>=100)
         {
             finaliza=true;
-        }else if (ronda == limRondas){ // comparamos si la cantidad de rondas en las que estamos es igual al que solicito el usuaio
+        }
+        else if (ronda == limRondas)   // comparamos si la cantidad de rondas en las que estamos es igual al que solicito el usuaio
+        {
             finaliza=true; // en el caso de que sea verdadero lo modificamos a true para que salga del juego
         }
 
@@ -181,24 +195,47 @@ void modoDosJugadores()
 
 
 
-    system("cls");
     if (puntajeTotalJ1>=puntajeTotalJ2 &&  tiradasJ1 <= tiradasJ2)
     {
         actualizarRankingDosJugadores(puntajeTotalJ1, nombre1);
+        rlutil::setBackgroundColor(rlutil::WHITE);
+        system("cls");
+        rlutil::setColor(rlutil::BLACK);
+        corona(54,8);
+        cout << endl;
+        rlutil::locate(42,12);
+        cout << "  FELICIDADES " << nombre1 << " GANASTE EL JUEGO!!!!!!" <<endl;
+        cout << endl;
+        rlutil::anykey();
+        rlutil::setBackgroundColor(rlutil::BLACK);
+        system("cls");
+        rlutil::setColor(rlutil::WHITE);
         cout << endl;
         cout << " ========================================================================" << endl;
         cout << endl;
-        cout << "  FELICIDADES " << nombre1 << " GANASTE EL JUEGO, LLEGASTE A " << puntajeTotalJ1 << " PUNTOS EN LA RONDA " << ronda << endl ;
+        cout << "  LLEGASTE A " << puntajeTotalJ1 << " PUNTOS EN LA RONDA " << ronda << endl ;
         cout << endl;
         cout << " ========================================================================" << endl;
     }
     else if (puntajeTotalJ2>=puntajeTotalJ1 && tiradasJ1 >= tiradasJ2)
     {
         actualizarRankingDosJugadores(puntajeTotalJ2, nombre2);
+        rlutil::setBackgroundColor(rlutil::WHITE);
+        system("cls");
+        rlutil::setColor(rlutil::BLACK);
+        corona(54,8);
+        cout << endl;
+        rlutil::locate(42,12);
+        cout << "  FELICIDADES " << nombre2 << " GANASTE EL JUEGO!!!!!!" <<endl;
+        cout << endl;
+        rlutil::anykey();
+        rlutil::setBackgroundColor(rlutil::BLACK);
+        system("cls");
+        rlutil::setColor(rlutil::WHITE);
         cout << endl;
         cout << " ========================================================================" << endl;
         cout << endl;
-        cout << "  FELICIDADES " << nombre2 << " GANASTE EL JUEGO, LLEGASTE A " << puntajeTotalJ2 << " PUNTOS EN LA RONDA " << ronda <<endl ;
+        cout << "  LLEGASTE A " << puntajeTotalJ2 << " PUNTOS EN LA RONDA " << ronda <<endl ;
         cout << endl;
         cout << " ========================================================================" << endl;
 

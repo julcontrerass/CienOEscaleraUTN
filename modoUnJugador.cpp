@@ -42,6 +42,7 @@ void modoUnJugador()
         {
 
             system("cls");
+            cout << "-------------------------------------------- " << endl;
             cout << "JUGADOR: " << nombre ;
             cout << " | RONDA: " << ronda;
             cout << " | PUNTAJE TOTAL: " << puntajeTotal << endl; //muestra el puntaje total
@@ -95,14 +96,24 @@ void modoUnJugador()
     }
 
     actualizarRanking(puntajeTotal, nombre);
-
+    rlutil::setBackgroundColor(rlutil::WHITE);
     system("cls");
+    rlutil::setColor(rlutil::BLACK);
+    corona(54,8);
     cout << endl;
-    cout << " ========================================================================" << endl;
     cout << endl;
-    cout << "  FELICIDADES GANASTE EL JUEGO, LLEGASTE A " << puntajeTotal << " PUNTOS" << " EN LA RONDA " <<  ronda << endl ;
+    rlutil::locate(42,12);
+    cout << "  FELICIDADES GANASTE EL JUEGO!!!!!!" <<endl;
     cout << endl;
-    cout << " ========================================================================" << endl;
+    rlutil::anykey();
+    rlutil::setBackgroundColor(rlutil::BLACK);
+    system("cls");
+    rlutil::setColor(rlutil::WHITE);
+    cout << " ==================================================================" << endl;
+    cout << endl;
+    cout << "   LLEGASTE A " << puntajeTotal << " PUNTOS" << " EN LA RONDA " <<  ronda << endl ;
+    cout << endl;
+    cout << " ==================================================================" << endl;
     cout << endl;
     cout << endl;
     cout << " ==============================" << endl;

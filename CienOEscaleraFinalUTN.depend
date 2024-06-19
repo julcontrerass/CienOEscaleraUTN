@@ -91,22 +91,22 @@
 	<ctime>
 	"funciones.h"
 
-1718766815 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\modounjugador.cpp
+1718814040 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\modounjugador.cpp
 	<iostream>
 	<ctime>
 	"rlutil.h"
 	"funciones.h"
 
-1718766815 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.h
+1718816484 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.h
 	<iostream>
 	<ctime>
 
-1718765582 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\puntaje.cpp
+1718811748 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\puntaje.cpp
 	<iostream>
 	"funciones.h"
 	"rlutil.h"
 
-1718766815 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.cpp
+1718809872 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.cpp
 	<iostream>
 	"funciones.h"
 	"rlutil.h"
@@ -150,7 +150,7 @@
 1718668030 source:c:\users\pc\onedrive\escritorio\cienoescalerautn\puntuacionmaxima.cpp
 	<iostream>
 
-1718766815 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\mododosjugadores.cpp
+1718815765 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\mododosjugadores.cpp
 	<iostream>
 	<ctime>
 	"rlutil.h"

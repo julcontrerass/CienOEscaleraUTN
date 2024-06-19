@@ -14,11 +14,13 @@ int tirarAEleccion (int numero, int posx, int posy);
 void Simulacion();
 void puntuacionUnJugador();
 void copa(int x , int y );
-void actualizarRanking(int puntaje, string nombre);
+string  actualizarRanking(int puntaje, string nombre);
 void sonrisa(int x, int y );
 void modoDosJugadores();
 void puntuacionDosJugadores();
 void actualizarRankingDosJugadores(int puntaje, string nombre);
+void ojos(int x, int y );
+void corona(int x, int y );
 
 
 //FUNCIONES DEL PROFE

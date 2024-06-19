@@ -54,33 +54,62 @@ int puntaje (int vNumDados[])
 
 
     ordenarVector(vNumDados, 6 );
-    bool escalera=false;
-    for (int i=0 ; i<6 ; i++)
+//    bool escalera=false;
+//    for (int i=0 ; i<6 ; i++)
+//    {
+//        if (vNumDados[i] != i+1)
+//        {
+//            escalera=false;
+//        }
+//        else
+//        {
+//            escalera=true;
+//        }
+//    }
+//    // CORROBORAMOS SI HAY UNA ESCALERA
+//    if (escalera == true   )
+//VEMOS SI HAY ESCALERA
+    bool hay1=false,hay2=false,hay3=false,hay4=false,hay5=false,hay6=false;
+
+    if(vNumDados[0] == 1)
     {
-        if (vNumDados[5] == 6)
-        {
-            escalera=true;
-        }
-        else
-        {
-            escalera=false;
-        }
+        hay1=true;
     }
+    if(vNumDados[1] == 2)
+    {
+        hay2=true;
+    }
+    if(vNumDados[2] == 3)
+    {
+        hay3=true;
+    }
+    if(vNumDados[3] == 4)
+    {
+        hay4=true;
+    }
+    if(vNumDados[4] == 5)
+    {
+        hay5=true;
+    }
+    if(vNumDados[5] == 6)
+    {
+        hay6=true;
+    }
+
     // CORROBORAMOS SI HAY UNA ESCALERA
-    if (escalera == true   )
+    if (hay1 == true && hay2 == true &&hay3 == true &&hay4 == true && hay5 == true && hay6 == true  )
     {
         system("cls");
         rlutil::hidecursor();
-        rlutil::locate(44,12);
+        rlutil::locate(42,12);
         cout << "------------------------------------" << endl;
-        rlutil::locate(44,13);
-
+        rlutil::locate(42,13);
         cout << "------- HICISTE UNA ESCALERA -------" << endl;
-        rlutil::locate(44,14);
-
+        rlutil::locate(42,14);
         cout << "------------------------------------" << endl;
         puntajeAux = 100;
+        ojos(54,16);
+        sonrisa(53,21);
     }
-
     return puntajeAux;
 }
