@@ -1,6 +1,6 @@
 #include <iostream>
 #include "funciones.h"
-
+#include "rlutil.h"
 using namespace std;
 int puntaje (int vNumDados[])
 {
@@ -32,59 +32,52 @@ int puntaje (int vNumDados[])
             break;
         }
     }
-    if (vContDados[5] == 6) {
+    if (vContDados[5] == 6)
+    {
         puntajeAux = 0;
         sexTeto=false;
 
     }
 
-    for (int i = 0; i < 5; i++) {
-        if (vContDados[i] == 6) {
+    for (int i = 0; i < 5; i++)
+    {
+        if (vContDados[i] == 6)
+        {
             puntajeAux = vNumDados[i] * 10;
         }
     }
 
-    if (puntajeAux == 0 && sexTeto==true){
+    if (puntajeAux == 0 && sexTeto==true)
+    {
         puntajeAux += sumarVector(vNumDados, 6 );
     }
 
 
     ordenarVector(vNumDados, 6 );
-
-    //VEMOS SI HAY ESCALERA
-    bool hay1=false,hay2=false,hay3=false,hay4=false,hay5=false,hay6=false;
-
-    if(vNumDados[0] == 1)
+    bool escalera=false;
+    for (int i=0 ; i<6 ; i++)
     {
-        hay1=true;
+        if (vNumDados[5] == 6)
+        {
+            escalera=true;
+        }
+        else
+        {
+            escalera=false;
+        }
     }
-    if(vNumDados[1] == 2)
-    {
-        hay2=true;
-    }
-    if(vNumDados[2] == 3)
-    {
-        hay3=true;
-    }
-    if(vNumDados[3] == 4)
-    {
-        hay4=true;
-    }
-    if(vNumDados[4] == 5)
-    {
-        hay5=true;
-    }
-    if(vNumDados[5] == 6)
-    {
-        hay6=true;
-    }
-
     // CORROBORAMOS SI HAY UNA ESCALERA
-    if (hay1 == true && hay2 == true &&hay3 == true &&hay4 == true && hay5 == true && hay6 == true  )
+    if (escalera == true   )
     {
         system("cls");
+        rlutil::hidecursor();
+        rlutil::locate(44,12);
         cout << "------------------------------------" << endl;
+        rlutil::locate(44,13);
+
         cout << "------- HICISTE UNA ESCALERA -------" << endl;
+        rlutil::locate(44,14);
+
         cout << "------------------------------------" << endl;
         puntajeAux = 100;
     }

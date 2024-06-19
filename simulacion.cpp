@@ -3,7 +3,6 @@
 
 using namespace std;
 
-#include "misFunciones.h"
 #include "funciones.h"
 #include "rlutil.h"
 

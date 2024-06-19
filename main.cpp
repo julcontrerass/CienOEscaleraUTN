@@ -2,7 +2,8 @@
 #include <ctime>
 
 using namespace std;
-#include "misFunciones.h"
+
+#include "funciones.h"
 
 int main()
 {
@@ -30,14 +31,15 @@ int main()
         break;
     case 2:
         system ("cls");
+        modoDosJugadores();
         break;
     case 3:
         system ("cls");
-        Puntuacion();
+        puntuacionUnJugador();
         break;
     case 4:
         system ("cls");
-        //ranking dos jugadores
+        puntuacionDosJugadores();
         break;
     case 5:
         system ("cls");

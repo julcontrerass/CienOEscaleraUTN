@@ -46,7 +46,7 @@ void sonrisa(int x, int y )
     cout<< (char)220;
     cout << endl;
 }
-
+// FUNCIONES DEL PROFE
 /// Desarrollo de funciones / Definiciones
 int posicionNumeroEnVector(int v[],int tam, int numero)
 {

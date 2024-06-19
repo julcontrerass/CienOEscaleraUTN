@@ -1,38 +1,37 @@
 #include <iostream>
 #include <ctime>
-#include "funciones.h"
+using namespace std;
 #include "rlutil.h"
-#include "misFunciones.h"
+#include "funciones.h"
 using namespace std;
 
 int puntajeMayor[3] {0,0,0};
 string nombreDelMayorPuntaje[3];
 
-
-
 void modoUnJugador()
 {
-    string nombre; //habr  variable con ingreso de letras
+    string nombre; //creamos variable con ingreso de letras
     int puntajeTotal = 0,Dados[6], ronda=1,maximoDeLaRonda =0,opcion; //habr  variables enteras
+    bool finaliza=false; //
     ponerCero(Dados, 3); //pone en 0 el valor de los dados
     cout << "------------------------------------" << endl;
     cout << "----- MODO DE JUEGO UN JUGADOR -----" << endl;
     cout << "------------------------------------" << endl;
     cout << " INGRESE EL NOMBRE DEL JUGADOR PARA INCIAR" << endl;
     cin.ignore();
-    getline(cin,nombre);
-    if(nombre=="")
+    getline(cin,nombre); // el getline deja el ingrese con espacion es en cin
+    if(nombre=="") // preguntamos si esta vacio el ingreso para corroborar que se ingreso el nombre del jugador
     {
         system("cls");
         cout << "Ingrese un nombre o volver al menu principal..." << endl;
         getline(cin,nombre);
-        if(nombre=="")
+        if(nombre=="") // si el usuario no ingreso el nombre en ninguna de las dos oportunidades lo mandamos al menu
         {
             system("cls");
             main();
         }
     }
-    while(puntajeTotal<100) //mientras puntaje total sea menor a 100
+    while(finaliza == false) //mientras puntaje total sea menor a 100
     {
         int puntajeTiradas[3];
         ponerCero(puntajeTiradas, 3);
@@ -53,8 +52,9 @@ void modoUnJugador()
             cout << endl;
             cout << "Presionar espacio para lanzar los dados " << endl;
 
-            rlutil::anykey(); // es como un system pause
+            rlutil::anykey();
 
+            // tirada de dados aleatoria y guardamos los valores
             for (int j=0; j<6; j++)
             {
                 Dados[j] = tirar((j + 1) *10,12); //muestra el valor ALEATORIO de cada dado
@@ -67,6 +67,14 @@ void modoUnJugador()
             ponerCero(Dados, 3);
 
         }
+
+        //guardamos la ubicacion que no retorna de donde se encuentra el numero maximo en el array
+        int ubi = maximoVector(puntajeTiradas, 3);
+
+        if (puntajeTiradas[ubi]>=100)
+        {
+            finaliza=true;
+        }
         int ubiCero = minimoVector(puntajeTiradas, 3);
         if (puntajeTiradas[ubiCero] == 0 )
         {
@@ -74,11 +82,15 @@ void modoUnJugador()
         }
         else
         {
-            int ubi = maximoVector(puntajeTiradas, 3);
+            ubi = maximoVector(puntajeTiradas, 3);
             maximoDeLaRonda = puntajeTiradas[ubi];
             puntajeTotal += puntajeTiradas[ubi];//al total se le acumula una de esas 3 tiradas(el valor mayor de las 3 tiradas)
         }
+        if (puntajeTotal>=100){
+            finaliza=true;
+        }
         ronda++;
+
 
     }
 
@@ -88,7 +100,7 @@ void modoUnJugador()
     cout << endl;
     cout << " ========================================================================" << endl;
     cout << endl;
-    cout << "  FELICIDADES GANASTE EL JUEGO, LLEGASTE A " << puntajeTotal << " PUNTOS" << endl ;
+    cout << "  FELICIDADES GANASTE EL JUEGO, LLEGASTE A " << puntajeTotal << " PUNTOS" << " EN LA RONDA " <<  ronda << endl ;
     cout << endl;
     cout << " ========================================================================" << endl;
     cout << endl;
@@ -111,8 +123,7 @@ void modoUnJugador()
         break;
     case 2:
         system ("cls");
-//      puntuacion mas alta
-        Puntuacion();
+        puntuacionUnJugador();
         break;
     case 3:
         system ("cls");
@@ -142,7 +153,7 @@ void actualizarRanking(int puntaje, string nombre)
         }
     }
 }
-void Puntuacion()
+void puntuacionUnJugador()
 {
     int opcion;
     system("cls");

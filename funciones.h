@@ -4,18 +4,24 @@
 #include <ctime>
 using namespace std;
 
-/* Usar en el main (si es un proyecto), o en el cpp para que funcionen.
+//NUESTRAS FUNCIONES
+void lanzarDados();
+int main();
+void modoUnJugador();
+int tirar (int posx, int posy);
+int puntaje(int vNumDados[]);
+int tirarAEleccion (int numero, int posx, int posy);
+void Simulacion();
+void puntuacionUnJugador();
+void copa(int x , int y );
+void actualizarRanking(int puntaje, string nombre);
+void sonrisa(int x, int y );
+void modoDosJugadores();
+void puntuacionDosJugadores();
+void actualizarRankingDosJugadores(int puntaje, string nombre);
 
-#include<iostream>
-#include<cstdlib>
-#include<cstdio>
-#include<ctime>
 
-using namespace std;
-#include “funciones.h”
-*/
-// Poner el archivo en la misma carpeta que el cpp
-/// DECLARACIÓN/PROTOTIPO DE FUNCIONES
+//FUNCIONES DEL PROFE
 void cargarVector(int v[], int tam);///asigna valores a cada una de las posiciones del vector
 
 void mostrarVector(int v[], int tam);/// muestra lo que contiene cada una de las posiciones del vector

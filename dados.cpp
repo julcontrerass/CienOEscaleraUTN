@@ -1,6 +1,5 @@
 #include <iostream>
 #include "rlutil.h"
-#include "misFunciones.h"
 
 using namespace std;
 
