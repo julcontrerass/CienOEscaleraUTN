@@ -13,5 +13,5 @@ void Simulacion();
 void Puntuacion();
 void copa(int x , int y );
 void actualizarRanking(int puntaje, string nombre);
-
+void sonrisa(int x, int y );
 #endif // MISFUNCIONES_H_INCLUDED

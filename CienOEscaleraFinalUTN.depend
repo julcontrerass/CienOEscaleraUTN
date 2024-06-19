@@ -66,7 +66,7 @@
 	<ctime>
 	"misFunciones.h"
 
-1718748047 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\dados.cpp
+1718752361 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\dados.cpp
 	<iostream>
 	"rlutil.h"
 	"misFunciones.h"
@@ -85,14 +85,14 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1718751906 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\misfunciones.h
+1718753459 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\misfunciones.h
 
 1718748047 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\main.cpp
 	<iostream>
 	<ctime>
 	"misFunciones.h"
 
-1718751906 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\modounjugador.cpp
+1718755323 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\modounjugador.cpp
 	<iostream>
 	<ctime>
 	"funciones.h"
@@ -111,7 +111,7 @@
 	<iostream>
 	"funciones.h"
 
-1718751906 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.cpp
+1718755362 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.cpp
 	<iostream>
 	"funciones.h"
 	"rlutil.h"

@@ -32,7 +32,6 @@ void modoUnJugador()
             main();
         }
     }
-
     while(puntajeTotal<100) //mientras puntaje total sea menor a 100
     {
         int puntajeTiradas[3];
@@ -124,7 +123,6 @@ void modoUnJugador()
     }
     rlutil::resetColor();
 }
-
 void actualizarRanking(int puntaje, string nombre)
 {
     for (int i = 0; i < 3; i++)
@@ -144,29 +142,31 @@ void actualizarRanking(int puntaje, string nombre)
         }
     }
 }
-
 void Puntuacion()
 {
     int opcion;
-
     system("cls");
-    cout << "=================================" << endl;
-    cout <<endl;
-    cout << "--           RANKING           --";
-    copa(5 , 2 );
-    copa(23 , 2 );
-    cout << "=================================" << endl;
+    cout << " =================================" << endl;
+    cout << endl;
+    cout << endl;
+    cout << " --           RANKING           --";
+    copa(6, 3 );
+    copa(24, 3 );
+    sonrisa(12,6);
+    cout << endl;
+    cout << endl;
+    cout << " =================================" << endl;
     cout << endl;
     cout << " PRIMER PUESTO: " << nombreDelMayorPuntaje[0] << " CON " << puntajeMayor[0] << " PUNTOS " << endl;
     cout << " SEGUNDO PUESTO: " << nombreDelMayorPuntaje[1] << " CON " << puntajeMayor[1] << " PUNTOS " << endl;
     cout << " TERCER PUESTO: " << nombreDelMayorPuntaje[2] << " CON " << puntajeMayor[2] << " PUNTOS " << endl;
     cout << endl;
-    cout << " ==============================" << endl;
-    cout << "|     1- VOLVER A MENU         |" << endl;
-    cout << "|     0- FINALIZAR JUEGO       |" << endl;
-    cout << " ==============================" << endl;
+    cout << "  ==============================" << endl;
+    cout << " |     1- VOLVER A MENU          |" << endl;
+    cout << " |     0- FINALIZAR JUEGO        |" << endl;
+    cout << "  ==============================" << endl;
     cout << endl;
-    cout << "INGRESE SU OPCION: ";
+    cout << " INGRESE SU OPCION: ";
     cin >> opcion;
 
     switch (opcion)
