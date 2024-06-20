@@ -12,23 +12,15 @@ void Simulacion()
     string nombre; //habr  variable con ingreso de letras
     int puntajeTotal = 0,Dados[6], ronda=1,maximoDeLaRonda =0,opcion; //habr  variables enteras
     ponerCero(Dados, 3); //pone en 0 el valor de los dados
+    rlutil::locate (43,6);
     cout << "------------------------------------" << endl;
+        rlutil::locate (43,7);
+
     cout << "--------- MODO SIMULACION ----------" << endl;
+        rlutil::locate (43,8);
+
     cout << "------------------------------------" << endl;
-    cout << " INGRESE EL NOMBRE DEL JUGADOR PARA INCIAR" << endl;
-    cin.ignore();
-    getline(cin,nombre);
-    if(nombre=="")
-    {
-        system("cls");
-        cout << "Ingrese un nombre o volver al menu principal..." << endl;
-        getline(cin,nombre);
-        if(nombre=="")
-        {
-            system("cls");
-            main();
-        }
-    }
+
 
     while(puntajeTotal<100) //mientras puntaje total sea menor a 100
     {
@@ -36,19 +28,18 @@ void Simulacion()
         ponerCero(puntajeTiradas, 3);
         srand(time (0)); // tira random pero no se que cosa
         rlutil::saveDefaultColor(); // deja el color negro ya que es color por defecto
-        system("cls");
-        cout << "------------------------------------" << endl;
-        cout << "--------- MODO SIMULACION ----------" << endl;
-        cout << "------------------------------------" << endl;
+        rlutil::locate (48,10);
         cout << "INGRESA 6 NUMEROS DE DADOS " <<endl;
+        rlutil::locate (48,12);
+
         for (int i=0; i<6 ; i++)
         {
+            rlutil::locate (48,i+12);
             cout << "DADO " << i + 1<< " ";
             cin >> dados [i];
         }
         for (int i=0 ; i<3; i++)
         {
-            rlutil::anykey();
             system("cls");
             cout << "JUGADOR: " << nombre ;
             cout << " | RONDA: " << ronda;
@@ -69,7 +60,7 @@ void Simulacion()
 
             rlutil::resetColor(); //resetea el color al negro
             //ponerCero(Dados, 3);
-
+            rlutil::anykey();
 
         }
 
@@ -95,7 +86,6 @@ void Simulacion()
     cout << "| 2- REINICIAR SIMULACION       |" << endl;
     cout << "| 0- FINALIZAR JUEGO            |" << endl;
     cout << " ==============================" << endl;
-
     cout << " SELECCIONE UNA OPCION: " ;
     cin >> opcion;
 

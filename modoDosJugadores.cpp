@@ -13,13 +13,26 @@ void modoDosJugadores()
     int  puntajeTotalJ1 = 0,puntajeTotalJ2 =0,Dados[6], ronda=0,maximoDeLaRondaJ1 =0,maximoDeLaRondaJ2=0,opcion,  tiradasJ1=0,tiradasJ2=0,limRondas; //habr  variables enteras
     bool finaliza=false;
     ponerCero(Dados, 3); //pone en 0 el valor de los dados
+    rlutil::locate (41,6);
     cout << "-------------------------------------" << endl;
+    rlutil::locate (41,7);
+
     cout << "----- MODO DE JUEGO DOS JUGADOR -----" << endl;
+    rlutil::locate (41,8);
+
     cout << "-------------------------------------" << endl;
+    rlutil::locate (41,10);
+
     cout << " INGRESE EL NOMBRE DEL PRIMER JUGADOR" << endl;
+    rlutil::locate (55,12);
+    cout << "- ";
     cin.ignore();
     getline(cin,nombre1);
+    rlutil::locate (41,14);
     cout << " INGRESE EL NOMBRE DEL SEGUNDO JUGADOR" << endl;
+    rlutil::locate (55,16);
+
+    cout << "- ";
     getline(cin,nombre2);
     if(nombre1=="" || nombre2 == "" )
     {
@@ -36,14 +49,20 @@ void modoDosJugadores()
     system("cls");
     //Dejamos que el usuario seleccione el limete de las rondas
     cout << endl;
+    rlutil::locate (42,10);
     cout << " QUIERE INGRESAR UN LIMITE DE RONDAS? " <<endl;
     cout << endl;
+    rlutil::locate (54,12);
     cout << " [ S / N  ]" <<endl;
+    rlutil::locate (59,14);
     cin >> opcionRondas;
 
-    if (opcionRondas == "n" || opcionRondas == "N"){
+    if (opcionRondas == "n" || opcionRondas == "N")
+    {
         finaliza = false;
-    }else if (opcionRondas == "s" || opcionRondas == "S"){
+    }
+    else if (opcionRondas == "s" || opcionRondas == "S")
+    {
         system("cls");
         cout << endl;
         cout<< " INGRESE EL LIMITE DE RONDAS QUE DESEA JUGAR "<<endl;

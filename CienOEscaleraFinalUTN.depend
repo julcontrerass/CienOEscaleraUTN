@@ -86,22 +86,23 @@
 
 1718759225 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\misfunciones.h
 
-1718766815 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\main.cpp
+1718924064 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\main.cpp
 	<iostream>
 	<ctime>
 	"funciones.h"
+	"rlutil.h"
 
-1718814040 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\modounjugador.cpp
+1718924472 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\modounjugador.cpp
 	<iostream>
 	<ctime>
 	"rlutil.h"
 	"funciones.h"
 
-1718816484 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.h
+1718912436 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.h
 	<iostream>
 	<ctime>
 
-1718811748 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\puntaje.cpp
+1718925021 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\puntaje.cpp
 	<iostream>
 	"funciones.h"
 	"rlutil.h"
@@ -111,7 +112,7 @@
 	"funciones.h"
 	"rlutil.h"
 
-1718766815 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\simulacion.cpp
+1718925332 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\simulacion.cpp
 	<iostream>
 	<ctime>
 	"funciones.h"
@@ -150,7 +151,7 @@
 1718668030 source:c:\users\pc\onedrive\escritorio\cienoescalerautn\puntuacionmaxima.cpp
 	<iostream>
 
-1718815765 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\mododosjugadores.cpp
+1718924939 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\mododosjugadores.cpp
 	<iostream>
 	<ctime>
 	"rlutil.h"

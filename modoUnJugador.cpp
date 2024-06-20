@@ -1,6 +1,5 @@
 #include <iostream>
 #include <ctime>
-using namespace std;
 #include "rlutil.h"
 #include "funciones.h"
 using namespace std;
@@ -14,10 +13,16 @@ void modoUnJugador()
     int puntajeTotal = 0,Dados[6], ronda=1,maximoDeLaRonda =0,opcion; //habr  variables enteras
     bool finaliza=false; //
     ponerCero(Dados, 3); //pone en 0 el valor de los dados
+    rlutil::locate (43,6);
     cout << "------------------------------------" << endl;
+    rlutil::locate (43,7);
     cout << "----- MODO DE JUEGO UN JUGADOR -----" << endl;
+    rlutil::locate (43,8);
     cout << "------------------------------------" << endl;
+    rlutil::locate (40,10);
     cout << " INGRESE EL NOMBRE DEL JUGADOR PARA INCIAR" << endl;
+    rlutil::locate (55,12);
+    cout << "-" ;
     cin.ignore();
     getline(cin,nombre); // el getline deja el ingrese con espacion es en cin
     if(nombre=="") // preguntamos si esta vacio el ingreso para corroborar que se ingreso el nombre del jugador
@@ -53,7 +58,7 @@ void modoUnJugador()
             cout << endl;
             cout << "Presionar espacio para lanzar los dados " << endl;
 
-            rlutil::anykey();
+
 
             // tirada de dados aleatoria y guardamos los valores
             for (int j=0; j<6; j++)
@@ -91,11 +96,7 @@ void modoUnJugador()
             finaliza=true;
         }
         ronda++;
-
-
     }
-
-    actualizarRanking(puntajeTotal, nombre);
     rlutil::setBackgroundColor(rlutil::WHITE);
     system("cls");
     rlutil::setColor(rlutil::BLACK);
@@ -125,7 +126,6 @@ void modoUnJugador()
     cout << endl;
     cout << "INGRESE SU OPCION: ";
     cin >> opcion;
-
     switch (opcion)
     {
     case 1:
@@ -138,7 +138,7 @@ void modoUnJugador()
         break;
     case 3:
         system ("cls");
-        cout << " ESTAMOS EN EL MENU MOSTRANDO LA PUNTUACION";
+        Simulacion();
         break;
     case 0:
         main();
@@ -201,7 +201,6 @@ void puntuacionUnJugador()
         return;
         break;
     }
-
 }
 
 

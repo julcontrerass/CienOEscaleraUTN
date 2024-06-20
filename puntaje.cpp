@@ -54,21 +54,7 @@ int puntaje (int vNumDados[])
 
 
     ordenarVector(vNumDados, 6 );
-//    bool escalera=false;
-//    for (int i=0 ; i<6 ; i++)
-//    {
-//        if (vNumDados[i] != i+1)
-//        {
-//            escalera=false;
-//        }
-//        else
-//        {
-//            escalera=true;
-//        }
-//    }
-//    // CORROBORAMOS SI HAY UNA ESCALERA
-//    if (escalera == true   )
-//VEMOS SI HAY ESCALERA
+    //VEMOS SI HAY ESCALERA
     bool hay1=false,hay2=false,hay3=false,hay4=false,hay5=false,hay6=false;
 
     if(vNumDados[0] == 1)

@@ -14,7 +14,7 @@ int tirarAEleccion (int numero, int posx, int posy);
 void Simulacion();
 void puntuacionUnJugador();
 void copa(int x , int y );
-string  actualizarRanking(int puntaje, string nombre);
+void actualizarRanking(int puntaje, string nombre);
 void sonrisa(int x, int y );
 void modoDosJugadores();
 void puntuacionDosJugadores();
