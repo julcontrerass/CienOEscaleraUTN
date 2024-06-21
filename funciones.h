@@ -7,14 +7,14 @@ using namespace std;
 //NUESTRAS FUNCIONES
 void lanzarDados();
 int main();
-void modoUnJugador();
+void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[]);
 int tirar (int posx, int posy);
 int puntaje(int vNumDados[]);
 int tirarAEleccion (int numero, int posx, int posy);
 void Simulacion();
-void puntuacionUnJugador();
+void puntuacionUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[]);
 void copa(int x , int y );
-void actualizarRanking(int puntaje, string nombre);
+void actualizarRanking(int puntaje, string nombre, int puntajeMayor[], string nombreDelMayorPuntaje[]);
 void sonrisa(int x, int y );
 void modoDosJugadores();
 void puntuacionDosJugadores();

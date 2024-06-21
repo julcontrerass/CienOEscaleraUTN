@@ -16,13 +16,10 @@ void modoDosJugadores()
     rlutil::locate (41,6);
     cout << "-------------------------------------" << endl;
     rlutil::locate (41,7);
-
     cout << "----- MODO DE JUEGO DOS JUGADOR -----" << endl;
     rlutil::locate (41,8);
-
     cout << "-------------------------------------" << endl;
     rlutil::locate (41,10);
-
     cout << " INGRESE EL NOMBRE DEL PRIMER JUGADOR" << endl;
     rlutil::locate (55,12);
     cout << "- ";
@@ -83,12 +80,18 @@ void modoDosJugadores()
         cout << endl;
         if (puntajeTotalJ1 >0)
         {
-            cout << " =========================== " <<endl;
-            cout << "| RONDA  NUMERO: " << ronda << endl;
-            cout << "| PROXIMO TURNO: " << nombre1<<endl;
-            cout << "| PUNTAJE "<< nombre1 << " " << puntajeTotalJ1 <<endl;
-            cout << "| PUNTAJE "<< nombre2 << " " << puntajeTotalJ2 <<endl;
-            cout << " =========================== " <<endl;
+            rlutil::locate (44,8);
+            cout << " ============================= " <<endl;
+            rlutil::locate (55,9);
+            cout << " RONDA " << ronda << endl;
+            rlutil::locate (51,10);
+            cout << " TURNO DE " << nombre1<<endl;
+            rlutil::locate (46,12);
+            cout << " PUNTAJE "<< nombre1 << " " << puntajeTotalJ1 <<endl;
+            rlutil::locate (46,13);
+            cout << " PUNTAJE "<< nombre2 << " " << puntajeTotalJ2 <<endl;
+            rlutil::locate (44,14);
+            cout << " ============================= " <<endl;
 
             rlutil::anykey();
         }
@@ -139,12 +142,18 @@ void modoDosJugadores()
         }
         ponerCero(puntajeTiradas, 3);
         system("cls");
-        cout << " =========================== " <<endl;
-        cout << "| RONDA  NUMERO: " << ronda << endl;
-        cout << "| PROXIMO TURNO: " << nombre2<<endl;
-        cout << "| PUNTAJE "<< nombre1 << " " << puntajeTotalJ1 <<endl;
-        cout << "| PUNTAJE "<< nombre2 << " " << puntajeTotalJ2 <<endl;
-        cout << " =========================== " <<endl;
+        rlutil::locate (44,8);
+            cout << " ============================= " <<endl;
+            rlutil::locate (55,9);
+            cout << " RONDA " << ronda << endl;
+            rlutil::locate (51,10);
+            cout << " TURNO DE " << nombre2<<endl;
+            rlutil::locate (46,12);
+            cout << " PUNTAJE "<< nombre1 << " " << puntajeTotalJ1 <<endl;
+            rlutil::locate (46,13);
+            cout << " PUNTAJE "<< nombre2 << " " << puntajeTotalJ2 <<endl;
+            rlutil::locate (44,14);
+            cout << " ============================= " <<endl;
 
         rlutil::anykey();
 

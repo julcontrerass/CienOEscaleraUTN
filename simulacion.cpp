@@ -9,18 +9,8 @@ using namespace std;
 
 void Simulacion()
 {
-    string nombre; //habr  variable con ingreso de letras
     int puntajeTotal = 0,Dados[6], ronda=1,maximoDeLaRonda =0,opcion; //habr  variables enteras
     ponerCero(Dados, 3); //pone en 0 el valor de los dados
-    rlutil::locate (43,6);
-    cout << "------------------------------------" << endl;
-        rlutil::locate (43,7);
-
-    cout << "--------- MODO SIMULACION ----------" << endl;
-        rlutil::locate (43,8);
-
-    cout << "------------------------------------" << endl;
-
 
     while(puntajeTotal<100) //mientras puntaje total sea menor a 100
     {
@@ -28,6 +18,16 @@ void Simulacion()
         ponerCero(puntajeTiradas, 3);
         srand(time (0)); // tira random pero no se que cosa
         rlutil::saveDefaultColor(); // deja el color negro ya que es color por defecto
+        system("cls");
+        rlutil::locate (43,6);
+        cout << "------------------------------------" << endl;
+        rlutil::locate (43,7);
+
+        cout << "--------- MODO SIMULACION ----------" << endl;
+        rlutil::locate (43,8);
+
+        cout << "------------------------------------" << endl;
+
         rlutil::locate (48,10);
         cout << "INGRESA 6 NUMEROS DE DADOS " <<endl;
         rlutil::locate (48,12);
@@ -41,19 +41,29 @@ void Simulacion()
         for (int i=0 ; i<3; i++)
         {
             system("cls");
-            cout << "JUGADOR: " << nombre ;
-            cout << " | RONDA: " << ronda;
-            cout << " | PUNTAJE TOTAL: " << puntajeTotal << endl; //muestra el puntaje total
-            cout << "------------------------------------ " << endl;
+            rlutil::locate(36, 2);
+            cout << "----------------------------------------------- " << endl;
+            rlutil::locate(41, 3);
+            cout << "RONDA " << ronda;
+            rlutil::locate(41, 4);
+            cout << "PUNTAJE TOTAL: " << puntajeTotal << endl;
+            rlutil::locate(36, 5);
+            cout << "----------------------------------------------- " << endl;
+            rlutil::locate(41, 6);
             cout << "MAXIMO PUNTAJE DE LA RONDA " << maximoDeLaRonda << endl;
-            cout << "LANZAMIENTO NUMERO " << i +1 << endl; //indica en qu‚ tirada va (est  en 0+1, o sea arranca en 1)
-            //cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " <<  puntajeTiradas[2] << endl; //cada dado[i] muestra el valor de su tirada
-            cout << endl;
+            rlutil::locate(41, 7);
+            cout << "LANZAMIENTO NUMERO " << i + 1 << endl;
+            rlutil::locate(41, 8);
+            cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " << puntajeTiradas[2] << endl;
+            rlutil::locate(36, 9);
+            cout << "----------------------------------------------- " << endl;
+            rlutil::locate(38, 11);
             cout << "Presionar espacio para lanzar los dados " << endl;
+
 
             for (int j=0; j<6; j++)
             {
-                Dados[j] = tirarAEleccion (dados[j], (j + 1) *10,12); //muestra el valor ALEATORIO de cada dado
+                Dados[j] = tirarAEleccion (dados[j], (j + 3) *10,16); //muestra el valor ALEATORIO de cada dado
             }
 
             puntajeTiradas[i] = puntaje(Dados);
@@ -77,27 +87,31 @@ void Simulacion()
         }
         rlutil::anykey();
         ronda++;
-
     }
     system("cls");
-    cout << endl;
+    rlutil::locate(45, 8);
     cout << " ==============================" << endl;
-    cout << "| 1- IR AL MENU PRINCIPAL       |" << endl;
-    cout << "| 2- REINICIAR SIMULACION       |" << endl;
+    rlutil::locate(45, 9);
+    cout << "| 1- REINICIAR SIMULACION       |" << endl;
+    rlutil::locate(45, 10);
+    cout << "| 3- IR AL MENU                 |" << endl;
+    rlutil::locate(45, 11);
     cout << "| 0- FINALIZAR JUEGO            |" << endl;
+    rlutil::locate(45, 12);
     cout << " ==============================" << endl;
-    cout << " SELECCIONE UNA OPCION: " ;
+    rlutil::locate(52, 14);
+    cout << "INGRESE SU OPCION: ";
     cin >> opcion;
 
     switch (opcion)
     {
     case 1:
         system ("cls");
-        main();
+        Simulacion();
         break;
     case 2:
         system("cls");
-        Simulacion();
+        main();
         break;
     case 0:
         system ("cls");
