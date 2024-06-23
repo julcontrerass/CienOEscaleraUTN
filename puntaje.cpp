@@ -6,39 +6,6 @@ int puntaje (int vNumDados[])
 {
     int puntajeAux=0, vContDados[6], contRepetidos=0;
     bool sexTeto=false;
-
-//    ponerCero(vContDados, 6);
-//    for (int i = 0; i < 6; i++)
-//    {
-//        switch (vNumDados[i])
-//        {
-//        case 1:
-//            vContDados[0]++;
-//            break;
-//        case 2:
-//            vContDados[1]++;
-//            break;
-//        case 3:
-//            vContDados[2]++;
-//            break;
-//        case 4:
-//            vContDados[3]++;
-//            break;
-//        case 5:
-//            vContDados[4]++;
-//            break;
-//        case 6:
-//            vContDados[5]++;
-//            break;
-//        }
-//    }
-//    if (vContDados[5] == 6)
-//    {
-//        puntajeAux = 0;
-//        sexTeto=false;
-//
-//    }
-
     for (int i = 0; i < 6; i++)
     {
         contRepetidos = contarNumerosRepetidos(vNumDados, i+1, 6);

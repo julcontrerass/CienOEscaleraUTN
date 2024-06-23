@@ -109,15 +109,18 @@ int tirar (int posx, int posy)
 }
 
 
-int tirarAEleccion (int numero, int posx, int posy)
+int tirarAEleccion (int numero, int posx, int posy, int op)
 {
     int dado = numero;
-
-    for (int i=0; i<20; i++)
+    if(op == 1)
     {
-        NumDado(rand()%6+1,posx,posy);
-        rlutil::msleep(5);
+        for (int i=0; i<20; i++)
+        {
+            NumDado(rand()%6+1,posx,posy);
+            rlutil::msleep(5);
+        }
     }
+
     NumDado(dado,posx,posy);
     return dado;
 }

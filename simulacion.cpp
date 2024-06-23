@@ -7,7 +7,7 @@ using namespace std;
 #include "rlutil.h"
 
 
-void Simulacion()
+void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
 {
     int puntajeTotal = 0,Dados[6], ronda=1,maximoDeLaRonda =0,opcion; //habr  variables enteras
     ponerCero(Dados, 3); //pone en 0 el valor de los dados
@@ -63,7 +63,7 @@ void Simulacion()
 
             for (int j=0; j<6; j++)
             {
-                Dados[j] = tirarAEleccion (dados[j], (j + 3) *10,16); //muestra el valor ALEATORIO de cada dado
+                Dados[j] = tirarAEleccion (dados[j], (j + 3) *10,16,1); //muestra el valor ALEATORIO de cada dado
             }
 
             puntajeTiradas[i] = puntaje(Dados);
@@ -94,7 +94,7 @@ void Simulacion()
     rlutil::locate(45, 9);
     cout << "| 1- REINICIAR SIMULACION       |" << endl;
     rlutil::locate(45, 10);
-    cout << "| 3- IR AL MENU                 |" << endl;
+    cout << "| 2- IR AL MENU                 |" << endl;
     rlutil::locate(45, 11);
     cout << "| 0- FINALIZAR JUEGO            |" << endl;
     rlutil::locate(45, 12);
@@ -107,11 +107,11 @@ void Simulacion()
     {
     case 1:
         system ("cls");
-        Simulacion();
+        Simulacion(puntajeMayor,nombreDelMayorPuntaje);
         break;
     case 2:
         system("cls");
-        main();
+        menu(puntajeMayor,nombreDelMayorPuntaje);
         break;
     case 0:
         system ("cls");

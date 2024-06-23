@@ -6,19 +6,18 @@ using namespace std;
 
 //NUESTRAS FUNCIONES
 void lanzarDados();
-int main();
+void reglas(int puntajeMayor[3], string nombreDelMayorPuntaje[3]);
+void menu(int puntajeMayor[3], string nombreDelMayorPuntaje[3]);
 void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[]);
+void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[]);
 int tirar (int posx, int posy);
 int puntaje(int vNumDados[]);
-int tirarAEleccion (int numero, int posx, int posy);
-void Simulacion();
-void puntuacionUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[]);
-void copa(int x , int y );
+int tirarAEleccion (int numero, int posx, int posy, int op);
+void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3]);
+void ranking(int puntajeMayor[], string nombreDelMayorPuntaje[]);
+void copa(int x, int y );
 void actualizarRanking(int puntaje, string nombre, int puntajeMayor[], string nombreDelMayorPuntaje[]);
 void sonrisa(int x, int y );
-void modoDosJugadores();
-void puntuacionDosJugadores();
-void actualizarRankingDosJugadores(int puntaje, string nombre);
 void ojos(int x, int y );
 void corona(int x, int y );
 

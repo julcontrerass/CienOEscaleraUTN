@@ -131,9 +131,11 @@ void corona(int x, int y )
         {
             rlutil::locate(x,y);
             cout<< (char)219<< endl;
-        }else {
-        rlutil::locate(x+i,y);
-        cout<< (char)220;
+        }
+        else
+        {
+            rlutil::locate(x+i,y);
+            cout<< (char)220;
         }
     }
 

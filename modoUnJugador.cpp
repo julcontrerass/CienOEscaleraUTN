@@ -37,7 +37,7 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
         if (nombre == "")
         {
             system("cls");
-            main();
+            menu(puntajeMayor,nombreDelMayorPuntaje);
         }
     }
 
@@ -114,11 +114,8 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
     system("cls");
     rlutil::setColor(rlutil::BLACK);
     corona(54, 8);
-    cout << endl;
-    cout << endl;
     rlutil::locate(42, 12);
-    cout << "  FELICIDADES GANASTE EL JUEGO!!!!!!" << endl;
-    cout << endl;
+    cout << "  FELICIDADES GANASTE EL JUEGO!!!" << endl;
     rlutil::anykey();
     rlutil::setBackgroundColor(rlutil::BLACK);
     system("cls");
@@ -132,12 +129,11 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
     rlutil::locate(45, 8);
     cout << " ==============================" << endl;
     rlutil::locate(45, 9);
-
     cout << "| 1- EMPEZAR EL JUEGO DE NUEVO  |" << endl;
     rlutil::locate(45, 10);
-    cout << "| 2- PUNTUACION MAS ALTA        |" << endl;
+    cout << "| 2- RANKING                    |" << endl;
     rlutil::locate(45, 11);
-    cout << "| 3- IR AL MENU                 |" << endl;
+    cout << "| 3- MENU                       |" << endl;
     rlutil::locate(45, 12);
     cout << "| 0- FINALIZAR JUEGO            |" << endl;
     rlutil::locate(45, 13);
@@ -153,11 +149,11 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
         break;
     case 2:
         system("cls");
-        puntuacionUnJugador(puntajeMayor, nombreDelMayorPuntaje);
+        ranking(puntajeMayor, nombreDelMayorPuntaje);
         break;
     case 3:
         system("cls");
-        main();
+        menu(puntajeMayor, nombreDelMayorPuntaje);
         break;
     case 0:
         return;
@@ -165,62 +161,6 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
     rlutil::resetColor();
 }
 
-void actualizarRanking(int puntaje, string nombre, int puntajeMayor[], string nombreDelMayorPuntaje[])
-{
-    for (int i = 0; i < 3; i++)
-    {
-        if (puntaje > puntajeMayor[i])
-        {
-            for (int j = 2; j > i; j--)
-            {
-                puntajeMayor[j] = puntajeMayor[j - 1];
-                nombreDelMayorPuntaje[j] = nombreDelMayorPuntaje[j - 1];
-            }
-            puntajeMayor[i] = puntaje;
-            nombreDelMayorPuntaje[i] = nombre;
-            break;
-        }
-    }
-}
 
-void puntuacionUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
-{
-    system("cls");
-    rlutil::locate (40,3);
-    cout << " =================================" << endl;
-    rlutil::locate (40,6);
-    cout << " --           RANKING           --";
-    copa(45, 5);
-    copa(63, 5);
-    sonrisa(51, 9);
-    rlutil::locate (40,12);
-    cout << " =================================" << endl;
-    rlutil::locate (40,14);
-    cout << " PRIMER PUESTO: " << nombreDelMayorPuntaje[0] << " CON " << puntajeMayor[0] << " PUNTOS " << endl;
-    rlutil::locate (40,15);
-    cout << " SEGUNDO PUESTO: " << nombreDelMayorPuntaje[1] << " CON " << puntajeMayor[1] << " PUNTOS " << endl;
-    rlutil::locate (40,16);
-    cout << " TERCER PUESTO: " << nombreDelMayorPuntaje[2] << " CON " << puntajeMayor[2] << " PUNTOS " << endl;
-    rlutil::locate (41,18);
-    cout << "  ===============================" << endl;
-    rlutil::locate (41,19);
-    cout << " |     1- VOLVER A MENU          |" << endl;
-    rlutil::locate (41,20);
-    cout << " |     0- FINALIZAR JUEGO        |" << endl;
-    rlutil::locate (41,21);
-    cout << "  ===============================" << endl;
-    rlutil::locate (48,23);
-    cout << " INGRESE SU OPCION ";
-    int opcion;
-    cin >> opcion;
 
-    switch (opcion)
-    {
-    case 1:
-        system("cls");
-        main();
-        break;
-    case 0:
-        return;
-    }
-}
+

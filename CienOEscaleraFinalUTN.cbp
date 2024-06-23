@@ -40,9 +40,12 @@
 		<Unit filename="funciones.cpp" />
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.cpp" />
 		<Unit filename="modoDosJugadores.cpp" />
 		<Unit filename="modoUnJugador.cpp" />
 		<Unit filename="puntaje.cpp" />
+		<Unit filename="ranking.cpp" />
+		<Unit filename="reglas.cpp" />
 		<Unit filename="rlutil.h" />
 		<Unit filename="simulacion.cpp" />
 		<Extensions>
