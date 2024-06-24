@@ -3,8 +3,9 @@
 
 using namespace std;
 
-#include "funciones.h"
+#include "misFunciones.h"
 #include "rlutil.h"
+
 
 
 int main()

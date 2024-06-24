@@ -5,6 +5,7 @@ using namespace std;
 
 #include "funciones.h"
 #include "rlutil.h"
+#include "misFunciones.h"
 
 
 void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3])

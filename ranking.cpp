@@ -4,7 +4,7 @@ using namespace std;
 
 #include "rlutil.h"
 #include "funciones.h"
-
+#include "misFunciones.h"
 void actualizarRanking(int puntaje, string nombre, int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
     for (int i = 0; i < 3; i++)
@@ -22,7 +22,6 @@ void actualizarRanking(int puntaje, string nombre, int puntajeMayor[], string no
         }
     }
 }
-
 void ranking(int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
     system("cls");

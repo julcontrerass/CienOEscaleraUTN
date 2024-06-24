@@ -3,6 +3,7 @@
 using namespace std;
 #include "rlutil.h"
 #include "funciones.h"
+#include "misFunciones.h"
 
 
 void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])

@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
 #include "rlutil.h"
-#include "funciones.h"
+#include "misFunciones.h"
+
+
 
 void menu (int puntajeMayor[3], string nombreDelMayorPuntaje[3])
 {

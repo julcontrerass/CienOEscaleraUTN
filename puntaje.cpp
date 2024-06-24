@@ -1,6 +1,7 @@
 #include <iostream>
 #include "funciones.h"
 #include "rlutil.h"
+#include "misFunciones.h"
 using namespace std;
 int puntaje (int vNumDados[])
 {
@@ -23,7 +24,6 @@ int puntaje (int vNumDados[])
             break;
         }
     }
-
     if (puntajeAux == 0 && sexTeto == false)
     {
         puntajeAux += sumarVector(vNumDados, 6);

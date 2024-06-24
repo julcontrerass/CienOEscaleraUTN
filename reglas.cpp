@@ -4,7 +4,7 @@
 using namespace std;
 #include "funciones.h"
 #include "rlutil.h"
-
+#include "misFunciones.h"
 void reglas(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
 {
     int opcion;
@@ -48,8 +48,6 @@ void reglas(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
     cout << "-Sexteto6 " << endl ;
     rlutil::locate(1,37);
     cout << " Seis 6, Resetea el puntaje total a 0  " ;
-
-
     rlutil::locate(45, 40);
     cout << " ==============================" << endl;
     rlutil::locate(45, 41);

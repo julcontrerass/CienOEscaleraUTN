@@ -2,6 +2,7 @@
 #include <ctime>
 #include "rlutil.h"
 #include "funciones.h"
+#include "misFunciones.h"
 using namespace std;
 
 

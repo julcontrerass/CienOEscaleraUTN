@@ -41,6 +41,8 @@
 		<Unit filename="funciones.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.cpp" />
+		<Unit filename="misFunciones.cpp" />
+		<Unit filename="misFunciones.h" />
 		<Unit filename="modoDosJugadores.cpp" />
 		<Unit filename="modoUnJugador.cpp" />
 		<Unit filename="puntaje.cpp" />
