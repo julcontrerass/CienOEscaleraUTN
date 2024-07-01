@@ -133,6 +133,10 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
 
             puntajeTiradas[i] = puntaje(Dados);
 
+            if(puntajeTiradas[i]==0 || puntajeTiradas[i]==100){
+                i=3;
+            }
+
             rlutil::resetColor(); //resetea el color al negro
             rlutil::anykey(); // es como un system pause
             ponerCero(Dados, 3);
@@ -205,6 +209,11 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
             }
 
             puntajeTiradas[i] = puntaje(Dados);
+
+            if(puntajeTiradas[i]==0 || puntajeTiradas[i]==100){
+                    i=3;
+
+            }
 
             rlutil::resetColor(); //resetea el color al negro
             rlutil::anykey(); // es como un system pause

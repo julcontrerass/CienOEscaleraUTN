@@ -20,6 +20,9 @@ int puntaje (int vNumDados[])
             {
                 puntajeAux = 0;
                 sexTeto = true;
+                system("cls");
+                cout << " TOCO SEXTETO DE SEIS, TU PUNTAJE SE REINICIA A 0 :) " << endl;
+                sonrisa(40,1);
             }
             break;
         }
