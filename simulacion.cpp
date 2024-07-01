@@ -69,9 +69,11 @@ void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
 
             puntajeTiradas[i] = puntaje(Dados);
 
-            if(puntajeTiradas[i]==0 || puntajeTiradas[i]==100){
+            /*if(puntajeTiradas[i]==0 || puntajeTiradas[i]==100){
                 i=3;
-            }
+            }*/
+
+
             rlutil::resetColor(); //resetea el color al negro
             //ponerCero(Dados, 3);
             rlutil::anykey();

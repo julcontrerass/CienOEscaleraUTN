@@ -81,9 +81,6 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
 
             puntajeTiradas[i] = puntaje(Dados);
 
-            if(puntajeTiradas[i]==0 || puntajeTiradas[i]==100){
-                i=3;
-            }
             rlutil::resetColor();
             rlutil::anykey();
             ponerCero(Dados, 3);
