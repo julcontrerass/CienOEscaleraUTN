@@ -17,5 +17,6 @@ void actualizarRanking(int puntaje, string nombre, int puntajeMayor[], string no
 void sonrisa(int x, int y );
 void ojos(int x, int y );
 void corona(int x, int y );
+void triste (int x, int y);
 
 #endif // MISFUNCIONES_H_INCLUDED

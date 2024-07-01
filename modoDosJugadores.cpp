@@ -27,7 +27,6 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
     rlutil::locate (41,14);
     cout << " INGRESE EL NOMBRE DEL SEGUNDO JUGADOR" << endl;
     rlutil::locate (55,16);
-
     cout << "- ";
     getline(cin,nombre2);
     if(nombre1=="" || nombre2 == "" )
@@ -70,8 +69,7 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
         cin>>limRondas;
     }
 
-
-    while( finaliza == false  )
+    while(finaliza == false)
     {
         int puntajeTiradas[3];
         tiradasJ1=0;
@@ -96,7 +94,6 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
             cout << "PUNTAJE "<< nombre2 << " " << puntajeTotalJ2 <<endl;
             rlutil::locate (44,14);
             cout << "============================= " <<endl;
-
             rlutil::anykey();
         }
         for (int i=0 ; i<3; i++)

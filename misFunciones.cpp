@@ -46,6 +46,38 @@ void sonrisa(int x, int y )
     cout<< (char)220;
     cout << endl;
 }
+
+void triste (int x, int y){
+    rlutil::hidecursor();
+    rlutil::locate(x,y+2);
+    cout<< (char)220<< endl;
+    rlutil::locate(x+1,y+2);
+    cout<< (char)223;
+    rlutil::locate(x+2,y+1);
+    cout<< (char)220 << endl;
+    rlutil::locate(x+3,y+1);
+    cout<< (char)223 ;
+    rlutil::locate(x+4,y+1);
+    cout<< (char)223 ;
+    rlutil::locate(x+5,y+1);
+    cout<< (char)223 ;
+    rlutil::locate(x+6,y+1);
+    cout<< (char)223 ;
+    rlutil::locate(x+7,y+1);
+    cout<< (char)223 ;
+    rlutil::locate(x+8,y+1);
+    cout<< (char)223 ;
+    rlutil::locate(x+9,y+1);
+    cout<< (char)223 ;
+
+    rlutil::locate(x+10,y+1);
+    cout<< (char)220 ;
+    rlutil::locate(x+11,y+2);
+    cout<< (char)223 ;
+    rlutil::locate(x+12,y+2);
+    cout<< (char)220;
+    cout << endl;
+}
 void ojos(int x, int y )
 {
     rlutil::hidecursor();

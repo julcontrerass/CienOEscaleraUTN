@@ -21,8 +21,15 @@ int puntaje (int vNumDados[])
                 puntajeAux = 0;
                 sexTeto = true;
                 system("cls");
-                cout << " TOCO SEXTETO DE SEIS, TU PUNTAJE SE REINICIA A 0 :) " << endl;
-                sonrisa(40,1);
+                rlutil::hidecursor();
+                rlutil::locate(37,10);
+                cout << "-----------------------------------------------------" << endl;
+                rlutil::locate(37,11);
+                cout << "- HICISTE SEXTETO DE 6, TU PUNTAJE SE REINICIA A 0  -" << endl;
+                rlutil::locate(37,12);
+                cout << "-----------------------------------------------------" << endl;
+                ojos(56, 15);
+                triste (55, 19);
             }
             break;
         }
