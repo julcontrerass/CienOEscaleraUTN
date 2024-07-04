@@ -6,6 +6,7 @@ using namespace std;
 #include "funciones.h"
 #include "misFunciones.h"
 
+/// NOS ORDENA EL RANKING MOVIOENDO DE PUESTO DEPENDIENDO DEL VALOR DE CADA UNO
 void actualizarRanking(int puntaje, string nombre, int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
     for (int i = 0; i < 3; i++)
@@ -23,6 +24,8 @@ void actualizarRanking(int puntaje, string nombre, int puntajeMayor[], string no
         }
     }
 }
+
+/// CREAMOS PAGINA DE RANKING
 void ranking(int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
     system("cls");
@@ -38,9 +41,9 @@ void ranking(int puntajeMayor[], string nombreDelMayorPuntaje[])
     rlutil::locate (40,14);
     cout << " PRIMER PUESTO: " << nombreDelMayorPuntaje[0] << " CON " << puntajeMayor[0] << " PUNTOS" << endl;
     rlutil::locate (40,15);
-    cout << " PRIMER PUESTO: " << nombreDelMayorPuntaje[1] << " CON " << puntajeMayor[1] << " PUNTOS" << endl;
+    cout << " SEGUNDO PUESTO: " << nombreDelMayorPuntaje[1] << " CON " << puntajeMayor[1] << " PUNTOS" << endl;
     rlutil::locate (40,16);
-    cout << " PRIMER PUESTO: " << nombreDelMayorPuntaje[2] << " CON " << puntajeMayor[2] << " PUNTOS" << endl;
+    cout << " TERCERO PUESTO: " << nombreDelMayorPuntaje[2] << " CON " << puntajeMayor[2] << " PUNTOS" << endl;
     rlutil::locate (41,18);
     cout << "  ===============================" << endl;
     rlutil::locate (41,19);

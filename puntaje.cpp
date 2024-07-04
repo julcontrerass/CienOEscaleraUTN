@@ -1,22 +1,26 @@
 #include <iostream>
+
+using namespace std;
+
 #include "funciones.h"
 #include "rlutil.h"
 #include "misFunciones.h"
-using namespace std;
+
+
 int puntaje (int vNumDados[])
 {
     int puntajeAux=0, vContDados[6], contRepetidos=0;
     bool sexTeto=false;
     for (int i = 0; i < 6; i++)
     {
-        contRepetidos = contarNumerosRepetidos(vNumDados, i+1, 6);
-        if (contRepetidos == 6)
+        contRepetidos = contarNumerosRepetidos(vNumDados, i+1, 6); /// VEMOS SI TENEMOS ALGUN NUMERO REPEDIDO
+        if (contRepetidos == 6) /// EN EL CASO DE QUE HAYA SALIDO UN NUMERO REPETIDO 6 VECES
         {
-            if (vNumDados[0] != 6)
+            if (vNumDados[0] != 6) /// SI ESE NUMERO REPETIDO ES DIFERENTE A 6 ENTONCES HACE LA CUENTA CORRESPONDIENTE
             {
                 puntajeAux = vNumDados[0] * 10;
             }
-            else
+            else /// Y SI NO TENEMOS EL SEXTETO DE 6 POR ENDE VAMOS A TENER UN PUNTAJE DE 6
             {
                 puntajeAux = 0;
                 sexTeto = true;
@@ -34,15 +38,15 @@ int puntaje (int vNumDados[])
             break;
         }
     }
-    if (puntajeAux == 0 && sexTeto == false)
+    if (puntajeAux == 0 && sexTeto == false) /// SI NO SE CUMPLIO NINGUNA DE LAS ANTERIORES CONDICIONES VAMOS A HACER LA CUENTA Y LO REEMPLAZAMOS EN NUESTRO PUNTAJE
     {
-        puntajeAux += sumarVector(vNumDados, 6);
+        puntajeAux = sumarVector(vNumDados, 6);
     }
 
     ordenarVector(vNumDados, 6);
 
     bool escalera = true;
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < 6; i++)  /// VERIFICAMOS SI TENEMOS UNA ESCALERA ORDENANDO EL ARRAY
     {
         if (vNumDados[i] != i + 1)
         {
@@ -52,7 +56,7 @@ int puntaje (int vNumDados[])
     }
 
     // CORROBORAMOS SI HAY UNA ESCALERA
-    if (escalera == true )
+    if (escalera == true ) /// SI HAY ESCALERA ENTONCENCES EL PUNTAJE
     {
         system("cls");
         rlutil::hidecursor();
@@ -68,3 +72,4 @@ int puntaje (int vNumDados[])
     }
     return puntajeAux;
 }
+

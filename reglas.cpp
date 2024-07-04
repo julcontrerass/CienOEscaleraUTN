@@ -1,10 +1,11 @@
 #include <iostream>
 
-
 using namespace std;
+
 #include "funciones.h"
 #include "rlutil.h"
 #include "misFunciones.h"
+
 void reglas(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
 {
     int opcion;
@@ -71,5 +72,4 @@ void reglas(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
         return;
     }
 }
-
 

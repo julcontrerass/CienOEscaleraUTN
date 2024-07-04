@@ -1,10 +1,12 @@
 #include <iostream>
+
 using namespace std;
+
 #include "rlutil.h"
 #include "misFunciones.h"
 
 
-
+/// A MENU LE PEDIMOS LOS DOS DATOS ESTOS DE ARRAY PARA MOVERNOS CON EL RANKING
 void menu (int puntajeMayor[3], string nombreDelMayorPuntaje[3])
 {
     int opcion;
@@ -56,3 +58,4 @@ void menu (int puntajeMayor[3], string nombreDelMayorPuntaje[3])
         return ;
     }
 }
+

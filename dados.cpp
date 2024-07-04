@@ -30,7 +30,7 @@ void NumDado (int numero, int posx, int posy)
     switch(numero)
     {
     case 1:
-        // POR EJEMPLO EN LA POSICION DE X 3 Y Y 2 PINTAMOS UN CUADRADITO CON (char)254
+        // POR EJEMPLO EN LA POSICION DE X 4 Y Y 2 PINTAMOS UN CUADRADITO CON (char)254
         rlutil::locate(posx+3,posy+1);
         cout << (char)254;
         valor = 1;
@@ -93,8 +93,9 @@ void NumDado (int numero, int posx, int posy)
     }
 }
 
-// CREAMOS LA FUNCION DE TIRAR QUE LLAMAMOS A LA FUNCION DE NumDado Y LE DAMOS UN VALOR RANDOM PARA QUE VAYAN APARECIENDO DIFERNTES NUMEROS DE DADO
-//PARA QUE SEA UN DADO ALEATORIO
+// CREAMOS LA FUNCION DE TIRAR QUE LLAMAMOS A LA FUNCION DE NumDado Y LE DAMOS UN VALOR RANDOM PARA QUE VAYAN APARECIENDO DIFERNTES NUMEROS DE DADOPARA QUE SEA UN DADO ALEATORIO
+
+/// EL FOR INTERNO LO QUE NOS HACES ES DARNOS 20 NUMEROS ENTRE 1 Y 6 ALEATORIO Y LE PONEMOS UNA PAUSA PARA QUE HAGA EL EFECTO DE QUE PASAR VARIOS DADOS
 int tirar (int posx, int posy)
 {
     int dado = rand() %6 +1;
@@ -108,10 +109,10 @@ int tirar (int posx, int posy)
     return dado;
 }
 
-
-int tirarAEleccion (int numero, int posx, int posy, int op)
+/// CREAMOS UNA FUNCION PARA EL USUARIO PUEDA ELEGIR LOS DADOS QUE QUIERA QUE SALGA DANDOLE EL VALOR EL
+int tirarAEleccion (int numero, int posx, int posy, int op )/// OP ES PARA USAR EN EL CODIGO DE REGLA PARA QUE NO ME HAGA EFECTO DE TIRAR Y QUE ME QUEDEN FIJAS
 {
-    if(op == 1)
+    if(op == 1) /// SI PONGO UNO AL LLAMAR A LA FUNCION POR EJEMPLO EN MODO SIMULACION ENTONCES SI NOS HACE EL EFECTO
     {
         for (int i=0; i<20; i++)
         {
@@ -122,4 +123,5 @@ int tirarAEleccion (int numero, int posx, int posy, int op)
     NumDado(numero,posx,posy);
     return numero;
 }
+
 

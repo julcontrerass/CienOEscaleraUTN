@@ -10,15 +10,14 @@ using namespace std;
 
 void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
 {
-    int puntajeTotal = 0,Dados[6], ronda=1,maximoDeLaRonda =0,opcion; //habr  variables enteras
-    ponerCero(Dados, 3); //pone en 0 el valor de los dados
-
-    while(puntajeTotal<100) //mientras puntaje total sea menor a 100
+    int puntajeTotal = 0,Dados[6], ronda=1,maximoDeLaRonda =0,opcion;
+    bool finaliza = false, sexteto = false;
+    while(finaliza == false)
     {
-        int puntajeTiradas[3],dados [5];
+        int puntajeTiradas[3],dados [5], tirada =0;
         ponerCero(puntajeTiradas, 3);
-        srand(time (0)); // tira random pero no se que cosa
-        rlutil::saveDefaultColor(); // deja el color negro ya que es color por defecto
+        srand(time (0));
+        rlutil::saveDefaultColor();
         system("cls");
         rlutil::locate (43,6);
         cout << "------------------------------------" << endl;
@@ -33,13 +32,13 @@ void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
         cout << "INGRESA 6 NUMEROS DE DADOS " <<endl;
         rlutil::locate (48,12);
 
-        for (int i=0; i<6 ; i++)
+        for (int i=0; i<6 ; i++) /// LE PEDIMOS QUE EL USUARIO INGRESE LOS NUMERO QUE DESEE
         {
             rlutil::locate (48,i+12);
             cout << "DADO " << i + 1<< " ";
             cin >> dados [i];
         }
-        for (int i=0 ; i<3; i++)
+        while (tirada <=2)
         {
             system("cls");
             rlutil::locate(36, 2);
@@ -53,7 +52,7 @@ void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
             rlutil::locate(41, 6);
             cout << "MAXIMO PUNTAJE DE LA RONDA " << maximoDeLaRonda << endl;
             rlutil::locate(41, 7);
-            cout << "LANZAMIENTO NUMERO " << i + 1 << endl;
+            cout << "LANZAMIENTO NUMERO " << tirada + 1 << endl;
             rlutil::locate(41, 8);
             cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " << puntajeTiradas[2] << endl;
             rlutil::locate(36, 9);
@@ -64,42 +63,63 @@ void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
 
             for (int j=0; j<6; j++)
             {
-                Dados[j] = tirarAEleccion (dados[j], (j + 3) *10,16,1); //muestra el valor ALEATORIO de cada dado
+                Dados[j] = tirarAEleccion (dados[j], (j + 3) *10,16,1); /// AL LLAMAR A LA FUNCION PARA TIRAR LOS DADOS LE DAMOS LOS NUMERO QUE ELGIO EL USUARIO
             }
 
-            puntajeTiradas[i] = puntaje(Dados);
+            puntajeTiradas[tirada] = puntaje(Dados);
+            if(puntajeTiradas[tirada] == 0 || puntajeTiradas[tirada] == 100)
+            {
+                tirada = 3;
+            }
 
-            /*if(puntajeTiradas[i]==0 || puntajeTiradas[i]==100){
-                i=3;
-            }*/
-
+            if(puntajeTiradas[tirada] == 0)
+            {
+                sexteto = true;
+            }
 
             rlutil::resetColor(); //resetea el color al negro
-            //ponerCero(Dados, 3);
             rlutil::anykey();
+            tirada++;
         }
 
-        int ubiCero = minimoVector(puntajeTiradas, 3);
-        if (puntajeTiradas[ubiCero] == 0 )
+        int ubi = maximoVector(puntajeTiradas, 3);
+        if (puntajeTiradas[ubi] == 100)
+        {
+            finaliza = true;
+            puntajeTotal += 100;
+        }
+        else if (sexteto == true)
         {
             puntajeTotal = 0;
+            maximoDeLaRonda = 0;
         }
         else
         {
-            int ubi = maximoVector(puntajeTiradas, 3);
+            ubi = maximoVector(puntajeTiradas, 3);
             maximoDeLaRonda = puntajeTiradas[ubi];
-            puntajeTotal += puntajeTiradas[ubi];//al total se le acumula una de esas 3 tiradas(el valor mayor de las 3 tiradas)
+            puntajeTotal += puntajeTiradas[ubi];
+        }
+        if (puntajeTotal >= 100)
+        {
+            finaliza = true;
         }
         rlutil::anykey();
         ronda++;
     }
     system("cls");
+    rlutil::setColor(rlutil::WHITE);
+    rlutil::locate(35, 3);
+    cout << " =====================================================" << endl;
+    rlutil::locate(40, 4);
+    cout << "   LLEGASTE A " << puntajeTotal << " PUNTOS" << " EN LA RONDA " << ronda - 1 << endl;
+    rlutil::locate(35, 5);
+    cout << " =====================================================" << endl;
     rlutil::locate(45, 8);
     cout << " ==============================" << endl;
     rlutil::locate(45, 9);
-    cout << "| 1- REINICIAR SIMULACION       |" << endl;
+    cout << "| 1- EMPEZAR SIMULACION DE NUEVO|" << endl;
     rlutil::locate(45, 10);
-    cout << "| 2- IR AL MENU                 |" << endl;
+    cout << "| 3- MENU                       |" << endl;
     rlutil::locate(45, 11);
     cout << "| 0- FINALIZAR JUEGO            |" << endl;
     rlutil::locate(45, 12);

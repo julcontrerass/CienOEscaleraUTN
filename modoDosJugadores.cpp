@@ -1,6 +1,8 @@
 #include <iostream>
 #include <ctime>
+
 using namespace std;
+
 #include "rlutil.h"
 #include "funciones.h"
 #include "misFunciones.h"
@@ -8,10 +10,11 @@ using namespace std;
 
 void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
-    string nombre1, nombre2,opcionRondas; //habr  variable con ingreso de letras
-    int  puntajeTotalJ1 = 0,puntajeTotalJ2 =0,Dados[6], ronda=0,maximoDeLaRondaJ1 =0,maximoDeLaRondaJ2=0,opcion,  tiradasJ1=0,tiradasJ2=0,limRondas; //habr  variables enteras
+    string nombre1, nombre2,opcionRondas;
+    int  puntajeTotalJ1 = 0,puntajeTotalJ2 =0,Dados[6], ronda=0,maximoDeLaRondaJ1 =0,maximoDeLaRondaJ2=0,opcion,  tiradasJ1=0,tiradasJ2=0,limRondas, tirada =0;
     bool finaliza=false;
-    ponerCero(Dados, 3); //pone en 0 el valor de los dados
+    ponerCero(Dados, 3);
+
     rlutil::locate (41,6);
     cout << "-------------------------------------" << endl;
     rlutil::locate (41,7);
@@ -32,7 +35,7 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
     if(nombre1=="" || nombre2 == "" )
     {
         rlutil::locate(40, 10);
-        cout << "Ingrese un nombre o volver al menu principal..." << endl;
+        cout << "INGRESE UN NOMBRE O VOLVERA AL MENU PRINCIPAL ..." << endl;
         rlutil::locate(55, 12);
         getline(cin,nombre1);
         rlutil::locate(40, 14);
@@ -46,7 +49,7 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
         }
     }
     system("cls");
-    //Dejamos que el usuario seleccione el limete de las rondas
+    /// DEJAMOS QUE EL USARIO DECIDA SI QUIERE PONER LIMITES DE RONDA O NO
     cout << endl;
     rlutil::locate (42,10);
     cout << " QUIERE INGRESAR UN LIMITE DE RONDAS? " <<endl;
@@ -72,14 +75,16 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
     while(finaliza == false)
     {
         int puntajeTiradas[3];
+        bool  sexteto = false;
         tiradasJ1=0;
         tiradasJ2=0;
         ronda++;
         ponerCero(puntajeTiradas, 3);
         system("cls");
-        srand(time (0)); // tira random pero no se que cosa
-        rlutil::saveDefaultColor(); // deja el color negro ya que es color por defecto
-        cout << endl;
+        srand(time (0));
+        rlutil::saveDefaultColor();
+
+        /// CREAMOS CARTELES PARA QUE ENTRE LOS TURNOS SE VEA A QUIEN LE TOCA Y CUANTOS PUNTOS TIENE CADA UNO
         if (puntajeTotalJ1 >0)
         {
             rlutil::locate (44,8);
@@ -96,9 +101,8 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
             cout << "============================= " <<endl;
             rlutil::anykey();
         }
-        for (int i=0 ; i<3; i++)
+        while(tiradasJ1 <= 2) /// LE DAMOS LA MISMA CONDICION QUE EN MODO UN JUGADOR
         {
-            tiradasJ1++;
             system("cls");
             rlutil::locate(36, 2);
             cout << "----------------------------------------------- " << endl;
@@ -107,51 +111,59 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
             rlutil::locate(41, 4);
             cout << "RONDA: " << ronda ;
             rlutil::locate(41, 5);
-            cout << "PUNTAJE TOTAL: " << puntajeTotalJ1 << endl; //muestra el puntaje total
+            cout << "PUNTAJE TOTAL: " << puntajeTotalJ1 << endl;
             rlutil::locate(36, 6);
             cout << "-------------------------------------------- " << endl;
             rlutil::locate(41, 7);
             cout << "MAXIMO PUNTAJE DE LA RONDA " << maximoDeLaRondaJ1 << endl;
             rlutil::locate(41, 8);
-            cout << "LANZAMIENTO NUMERO " << i +1 << endl; //indica en qu‚ tirada va (est  en 0+1, o sea arranca en 1)
+            cout << "LANZAMIENTO NUMERO " << tiradasJ1 +1 << endl;
             rlutil::locate(41, 9);
-            cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " <<  puntajeTiradas[2] << endl; //cada dado[i] muestra el valor de su tirada
+            cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " <<  puntajeTiradas[2] << endl;
             rlutil::locate(36, 10);
             cout << "----------------------------------------------- " << endl;
             rlutil::locate(38, 12);
             cout << "Presionar espacio para lanzar los dados " << endl;
 
-            rlutil::anykey(); // es como un system pause
+            rlutil::anykey();
 
             for (int j=0; j<6; j++)
             {
-                Dados[j] = tirar((j + 3) *10,16); //muestra el valor ALEATORIO de cada dado
+                Dados[j] = tirar((j + 3) *10,16);
             }
 
-            puntajeTiradas[i] = puntaje(Dados);
+            puntajeTiradas[tiradasJ1] = puntaje(Dados);
 
-            rlutil::resetColor(); //resetea el color al negro
-            rlutil::anykey(); // es como un system pause
+            if(puntajeTiradas[tiradasJ1]==0 || puntajeTiradas[tiradasJ1]==100)
+            {
+                tiradasJ1 = 3;
+            }
+            if(puntajeTiradas[tiradasJ1] == 0)
+            {
+                sexteto = true;
+            }
+
+            rlutil::resetColor();
+            rlutil::anykey();
             ponerCero(Dados, 3);
-
+            tiradasJ1 ++;
         }
         int ubi=maximoVector(puntajeTiradas, 3);
         if (puntajeTiradas[ubi] == 100)
         {
-            puntajeTotalJ1 += puntajeTiradas[ubi];
-            break;
+            puntajeTotalJ1 += 100;
         }
-        int ubiCero = minimoVector(puntajeTiradas, 3);
-        if (puntajeTiradas[ubiCero] == 0 )
+        else if (sexteto == true )
         {
             puntajeTotalJ1 = 0;
+            maximoDeLaRondaJ1 = 0;
         }
         else
         {
-            ubi = maximoVector(puntajeTiradas, 3);
             maximoDeLaRondaJ1 = puntajeTiradas[ubi];
-            puntajeTotalJ1 += puntajeTiradas[ubi];//al total se le acumula una de esas 3 tiradas(el valor mayor de las 3 tiradas)
+            puntajeTotalJ1 += puntajeTiradas[ubi];
         }
+        sexteto = false;
         ponerCero(puntajeTiradas, 3);
         system("cls");
         rlutil::locate (44,8);
@@ -169,9 +181,8 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
 
         rlutil::anykey();
 
-        for (int i=0 ; i<3; i++)
+        while(tiradasJ2 <= 2) /// MISMAS CONDICIONES 3 TIRADAS CADA UNO
         {
-            tiradasJ2++;
             system("cls");
             rlutil::locate(36, 2);
             cout << "----------------------------------------------- " << endl;
@@ -180,53 +191,57 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
             rlutil::locate(41, 4);
             cout << "RONDA: " << ronda;
             rlutil::locate(41, 5);
-            cout << "PUNTAJE TOTAL: " << puntajeTotalJ2 << endl; //muestra el puntaje total
+            cout << "PUNTAJE TOTAL: " << puntajeTotalJ2 << endl;
             rlutil::locate(36, 6);
             cout << "-------------------------------------------- " << endl;
             rlutil::locate(41, 7);
             cout << "MAXIMO PUNTAJE DE LA RONDA " << maximoDeLaRondaJ2 << endl;
             rlutil::locate(41, 8);
-            cout << "LANZAMIENTO NUMERO " << i +1 << endl; //indica en qu‚ tirada va (est  en 0+1, o sea arranca en 1)
+            cout << "LANZAMIENTO NUMERO " << tiradasJ2 +1 << endl;
             rlutil::locate(41, 9);
-            cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " <<  puntajeTiradas[2] << endl; //cada dado[i] muestra el valor de su tirada
+            cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " <<  puntajeTiradas[2] << endl;
             rlutil::locate(36, 10);
             cout << "----------------------------------------------- " << endl;
             rlutil::locate(38, 12);
             cout << "Presionar espacio para lanzar los dados " << endl;
 
-            rlutil::anykey(); // es como un system pause
-
+            rlutil::anykey();
             for (int j=0; j<6; j++)
             {
-                Dados[j] = tirar((j + 3) *10,16); //muestra el valor ALEATORIO de cada dado
+                Dados[j] = tirar((j + 3) *10,16);
             }
 
-            puntajeTiradas[i] = puntaje(Dados);
+            puntajeTiradas[tiradasJ2] = puntaje(Dados);
 
-            rlutil::resetColor(); //resetea el color al negro
-            rlutil::anykey(); // es como un system pause
+            if(puntajeTiradas[tiradasJ2]==0 || puntajeTiradas[tiradasJ2]==100)
+            {
+                tiradasJ2 = 3;
+            }
+            if(puntajeTiradas[tiradasJ2] == 0)
+            {
+                sexteto = true;
+            }
+
+            rlutil::resetColor();
+            rlutil::anykey();
             ponerCero(Dados, 3);
-
+            tiradasJ2++;
         }
         ubi=maximoVector(puntajeTiradas, 3);
         if (puntajeTiradas[ubi] == 100)
         {
             puntajeTotalJ2 += puntajeTiradas[ubi];
-            break;
         }
-        ubiCero = minimoVector(puntajeTiradas, 3);
-
-        if (puntajeTiradas[ubiCero] == 0 )
+        else if (sexteto == true )
         {
             puntajeTotalJ2 = 0;
+            maximoDeLaRondaJ2 = 0;
         }
         else
         {
-            ubi = maximoVector(puntajeTiradas, 3);
             maximoDeLaRondaJ2 = puntajeTiradas[ubi];
-            puntajeTotalJ2 += puntajeTiradas[ubi];//al total se le acumula una de esas 3 tiradas(el valor mayor de las 3 tiradas)
+            puntajeTotalJ2 += puntajeTiradas[ubi];
         }
-        //condiciones para que finalice el juego
         if (puntajeTotalJ1>=100)
         {
             finaliza=true;
@@ -235,13 +250,13 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
         {
             finaliza=true;
         }
-        else if (ronda == limRondas)   // comparamos si la cantidad de rondas en las que estamos es igual al que solicito el usuaio
+        else if (ronda == limRondas)
         {
-            finaliza=true; // en el caso de que sea verdadero lo modificamos a true para que salga del juego
+            finaliza=true;
         }
 
     }
-    if (puntajeTotalJ1>=puntajeTotalJ2 &&  tiradasJ1 <= tiradasJ2)
+    if (puntajeTotalJ1>=puntajeTotalJ2 &&  tiradasJ1 <= tiradasJ2) /// VEMOS QUIEN HIZO MAS PUNTOS ENTRE LOS DOS Y O QUIEN HIZO MENOS TIRADAS Y LE DECIMOS QUIEN GANO
     {
         actualizarRanking(puntajeTotalJ1, nombre1,puntajeMayor, nombreDelMayorPuntaje);
         rlutil::setBackgroundColor(rlutil::WHITE);
@@ -280,7 +295,6 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
         cout << nombre2 << " LLEGASTE A " << puntajeTotalJ2 << " PUNTOS EN LA RONDA " << ronda <<endl ;
         rlutil::locate(35, 5);
         cout << " ================================================================" << endl;
-
     }
     rlutil::locate(45, 8);
     cout << " ==============================" << endl;
@@ -316,6 +330,9 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
     }
     rlutil::resetColor();
 }
+
+
+
 
 
 

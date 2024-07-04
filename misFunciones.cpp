@@ -1,9 +1,12 @@
 #include <iostream>
+
+using namespace std;
+
 #include "funciones.h"
 #include "rlutil.h"
 #include "misFunciones.h"
-using namespace std;
 
+/// CREAMOS UNA COPA PARA EL RANKING
 void copa(int x, int y )
 {
     rlutil::hidecursor();
@@ -15,6 +18,8 @@ void copa(int x, int y )
     cout<< " " << (char)220 << (char)220 << (char)219 << (char)220 << (char)220 << endl;
 
 }
+
+/// UNA SONRISA PARA EL QUE HAGA ESCALERA O GANE
 void sonrisa(int x, int y )
 {
     rlutil::hidecursor();
@@ -47,6 +52,7 @@ void sonrisa(int x, int y )
     cout << endl;
 }
 
+/// UNA SONRISA TRISTE PARA EL QUE EL TOQUE SEXTETO DE 6
 void triste (int x, int y){
     rlutil::hidecursor();
     rlutil::locate(x,y+2);
@@ -78,6 +84,8 @@ void triste (int x, int y){
     cout<< (char)220;
     cout << endl;
 }
+
+/// OJOS PARA LA SONRISA O EL TRISTE
 void ojos(int x, int y )
 {
     rlutil::hidecursor();
@@ -113,6 +121,8 @@ void ojos(int x, int y )
     rlutil::locate(x+10,y+3);
     cout<< (char)223<< endl;
 }
+
+/// CORONA PARA EL GANADOR DE LA PARTIDA
 void corona(int x, int y )
 {
     rlutil::hidecursor();
@@ -170,7 +180,5 @@ void corona(int x, int y )
             cout<< (char)220;
         }
     }
-
-
-
 }
+

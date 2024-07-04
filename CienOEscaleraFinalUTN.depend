@@ -66,11 +66,11 @@
 	"misFunciones.h"
 	"rlutil.h"
 
-1719794224 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\dados.cpp
+1720126953 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\dados.cpp
 	<iostream>
 	"rlutil.h"
 
-1719794224 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\rlutil.h
+1720126601 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\rlutil.h
 	<iostream>
 	<string>
 	<cstdio>
@@ -84,30 +84,28 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1719794693 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\misfunciones.h
+1720127432 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\misfunciones.h
 
-1719794224 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\main.cpp
+1720127000 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\main.cpp
 	<iostream>
-	<ctime>
 	"misFunciones.h"
-	"rlutil.h"
 
-1719794224 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\modounjugador.cpp
+1720127219 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\modounjugador.cpp
 	<iostream>
 	<ctime>
 	"rlutil.h"
 	"funciones.h"
 	"misFunciones.h"
 
-1719794224 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.h
+1720126601 c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.h
 
-1719795429 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\puntaje.cpp
+1720127266 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\puntaje.cpp
 	<iostream>
 	"funciones.h"
 	"rlutil.h"
 	"misFunciones.h"
 
-1719794224 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.cpp
+1720127435 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\funciones.cpp
 	<iostream>
 	<ctime>
 	"funciones.h"
@@ -153,25 +151,25 @@
 1718668030 source:c:\users\pc\onedrive\escritorio\cienoescalerautn\puntuacionmaxima.cpp
 	<iostream>
 
-1719794224 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\mododosjugadores.cpp
+1720127117 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\mododosjugadores.cpp
 	<iostream>
 	<ctime>
 	"rlutil.h"
 	"funciones.h"
 	"misFunciones.h"
 
-1719794224 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\menu.cpp
+1720127012 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\menu.cpp
 	<iostream>
 	"rlutil.h"
 	"misFunciones.h"
 
-1719796569 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\ranking.cpp
+1720127293 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\ranking.cpp
 	<iostream>
 	"rlutil.h"
 	"funciones.h"
 	"misFunciones.h"
 
-1719794224 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\reglas.cpp
+1720127434 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\reglas.cpp
 	<iostream>
 	"funciones.h"
 	"rlutil.h"
@@ -183,7 +181,7 @@
 	"rlutil.h"
 	"misFunciones.h"
 
-1719795062 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\misfunciones.cpp
+1720127119 source:c:\users\xxjul\onedrive\escritorio\cienoescalerautn\misfunciones.cpp
 	<iostream>
 	"funciones.h"
 	"rlutil.h"

@@ -1,12 +1,14 @@
 #include <iostream>
 #include <ctime>
+
+using namespace std;
+
 #include "funciones.h"
 #include "rlutil.h"
 #include "misFunciones.h"
-using namespace std;
 
 // FUNCIONES DEL PROFE
-/// Desarrollo de funciones / Definiciones
+
 int posicionNumeroEnVector(int v[],int tam, int numero)
 {
     int i;
@@ -137,3 +139,4 @@ void cargarVector(int v[], int tam)
         cin>>v[i];
     }
 }
+

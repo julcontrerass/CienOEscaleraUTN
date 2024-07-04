@@ -1,19 +1,18 @@
 #include <iostream>
 #include <ctime>
+
+using namespace std;
+
 #include "rlutil.h"
 #include "funciones.h"
 #include "misFunciones.h"
-using namespace std;
-
-
 
 void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
     string nombre;
     int puntajeTotal = 0, Dados[6], ronda = 1, maximoDeLaRonda = 0, opcion;
-    bool finaliza = false;
+    bool finaliza = false, sexteto=false;
 
-    ponerCero(Dados, 3);
     rlutil::locate(43, 6);
     cout << "------------------------------------" << endl;
     rlutil::locate(43, 7);
@@ -26,7 +25,7 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
     cout << "-";
     cin.ignore();
     getline(cin, nombre);
-
+     /// SI EL USARIO NO INGRESA NOMBRE LE ARETAMOS QUE DEBE COMPLETARLO
     if (nombre == "")
     {
         system("cls");
@@ -44,14 +43,14 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
 
     while (finaliza == false)
     {
-        int puntajeTiradas[3];
+        int puntajeTiradas[3], tirada=0 ;
         ponerCero(puntajeTiradas, 3);
         system("cls");
         srand(time(0));
         rlutil::saveDefaultColor();
 
-        for (int i = 0; i < 3; i++)
-        {
+        /// CREAMOS UN WHILE PARA QUE SI EL USUARIO SACA ESCALERA O SEXTETO DE 6 FINALICE Y NO PUEDA SEGUIR TIRANDO EL RESTO
+        while(tirada <= 2){
             system("cls");
             rlutil::locate(36, 2);
             cout << "----------------------------------------------- " << endl;
@@ -66,7 +65,7 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
             rlutil::locate(41, 7);
             cout << "MAXIMO PUNTAJE DE LA RONDA " << maximoDeLaRonda << endl;
             rlutil::locate(41, 8);
-            cout << "LANZAMIENTO NUMERO " << i + 1 << endl;
+            cout << "LANZAMIENTO NUMERO " << tirada + 1 << endl;
             rlutil::locate(41, 9);
             cout << "TIRADA 1: " << puntajeTiradas[0] << " TIRADA 2: " << puntajeTiradas[1] << " TIRADA 3: " << puntajeTiradas[2] << endl;
             rlutil::locate(36, 10);
@@ -76,33 +75,40 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
 
             for (int j = 0; j<6; j++)
             {
-                Dados[j] = tirar((j + 3) * 10, 16);
+                Dados[j] = tirar((j + 3) * 10, 16);/// LLAMAMOS A LA FUNCION TIRAR PARA QUE TIRE LOS DADOS Y CON EL ARRAY GUARDAMOS CADA UNO DE ELLOS
             }
 
-            puntajeTiradas[i] = puntaje(Dados);
+            puntajeTiradas[tirada] = puntaje(Dados); /// CON LA FUNCION PUNTAJE VERIFICAMOS CUAL ES EL RESULTADO DEL PUNTAJE Y ESE RESULTADO LO GUARDAMOS EN CADA TIRADA
 
+            if(puntajeTiradas[tirada] == 0 || puntajeTiradas[tirada] == 100){ /// SI EN LA TIRADA SALE SEXTETO DE 6 O ESCALERA ENTONCES FINALIZAMOS NUESTRO WHILE DE TIRADAS
+                tirada = 3;
+            }
+
+            if(puntajeTiradas[tirada] == 0 ){
+                sexteto = true;
+            }
             rlutil::resetColor();
             rlutil::anykey();
-            ponerCero(Dados, 3);
+            tirada++;
         }
 
         int ubi = maximoVector(puntajeTiradas, 3);
-
-        if (puntajeTiradas[ubi] >= 100)
+        if (puntajeTiradas[ubi] == 100)  /// CORROBORAMOS SI SALIO UN 100 ENTONCES TENEMOS UNA ESCALERA
         {
-            finaliza = true;
+            puntajeTotal += 100;
         }
-        int ubiCero = minimoVector(puntajeTiradas, 3);
-        if (puntajeTiradas[ubiCero] == 0)
+        else if (sexteto == true) /// SI HABIA SALIDO UN SEXTETO DE 6 ENTONCES REINICIAMOS EL PUNTAJE TOTAL EN 0
         {
             puntajeTotal = 0;
+            maximoDeLaRonda = 0;
         }
         else
         {
-            ubi = maximoVector(puntajeTiradas, 3);
             maximoDeLaRonda = puntajeTiradas[ubi];
             puntajeTotal += puntajeTiradas[ubi];
         }
+
+
         if (puntajeTotal >= 100)
         {
             finaliza = true;
@@ -111,7 +117,7 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
 
     }
 
-    actualizarRanking(puntajeTotal, nombre, puntajeMayor, nombreDelMayorPuntaje);
+    actualizarRanking(puntajeTotal, nombre, puntajeMayor, nombreDelMayorPuntaje); /// CON LOS RESULTADOS DE LA PARTIDA LOS MANDAMOS A ACTUALIZARRANKING PARA ORDENAR EL ARRAY DE RANKING
 
     rlutil::setBackgroundColor(rlutil::WHITE);
     system("cls");
@@ -163,6 +169,7 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
     }
     rlutil::resetColor();
 }
+
 
 
 
