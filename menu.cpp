@@ -7,7 +7,7 @@ using namespace std;
 
 
 /// A MENU LE PEDIMOS LOS DOS DATOS ESTOS DE ARRAY PARA MOVERNOS CON EL RANKING
-void menu (int puntajeMayor[3], string nombreDelMayorPuntaje[3])
+void menu (int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
     int opcion;
     rlutil::locate (40,6);

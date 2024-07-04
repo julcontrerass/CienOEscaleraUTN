@@ -6,7 +6,7 @@ using namespace std;
 #include "rlutil.h"
 #include "misFunciones.h"
 
-void reglas(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
+void reglas(int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
     int opcion;
     rlutil::locate(48,2);

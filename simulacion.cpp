@@ -8,7 +8,7 @@ using namespace std;
 #include "misFunciones.h"
 
 
-void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
+void Simulacion(int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
     int puntajeTotal = 0,Dados[6], ronda=1,maximoDeLaRonda =0,opcion;
     bool finaliza = false, sexteto = false;
@@ -35,8 +35,13 @@ void Simulacion(int puntajeMayor[3], string nombreDelMayorPuntaje[3])
         for (int i=0; i<6 ; i++) /// LE PEDIMOS QUE EL USUARIO INGRESE LOS NUMERO QUE DESEE
         {
             rlutil::locate (48,i+12);
-            cout << "DADO " << i + 1<< " ";
+            cout << "DADO " << i + 1<< ": ";
             cin >> dados [i];
+            if (dados[i] > 6){
+                rlutil::locate (42,i+12);
+                cout << "DEBES INGRESAR UN NUMERO ENTRE 1 Y 6 : " ;
+                cin >> dados [i];
+            }
         }
         while (tirada <=2)
         {
