@@ -37,7 +37,7 @@ void Simulacion(int puntajeMayor[], string nombreDelMayorPuntaje[])
             rlutil::locate (48,i+12);
             cout << "DADO " << i + 1<< ": ";
             cin >> dados [i];
-            if (dados[i] > 6){
+            if (dados[i] > 6 || dados[i] < 1){
                 rlutil::locate (42,i+12);
                 cout << "DEBES INGRESAR UN NUMERO ENTRE 1 Y 6 : " ;
                 cin >> dados [i];
