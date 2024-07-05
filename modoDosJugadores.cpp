@@ -139,7 +139,7 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
 
             if(puntajeTiradas[tiradasJ1]==0 || puntajeTiradas[tiradasJ1]==100)
             {
-                tiradasJ1 = 3;
+                tiradasJ1 = 2;
             }
             if(puntajeTiradas[tiradasJ1] == 0)
             {
@@ -218,7 +218,7 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
 
             if(puntajeTiradas[tiradasJ2]==0 || puntajeTiradas[tiradasJ2]==100)
             {
-                tiradasJ2 = 3;
+                tiradasJ2 = 2;
             }
             if(puntajeTiradas[tiradasJ2] == 0)
             {
@@ -262,15 +262,13 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
     if (puntajeTotalJ1>=puntajeTotalJ2 &&  tiradasJ1 <= tiradasJ2) /// VEMOS QUIEN HIZO MAS PUNTOS ENTRE LOS DOS Y O QUIEN HIZO MENOS TIRADAS Y LE DECIMOS QUIEN GANO
     {
         actualizarRanking(puntajeTotalJ1, nombre1,puntajeMayor, nombreDelMayorPuntaje);
-        rlutil::setBackgroundColor(rlutil::WHITE);
         system("cls");
-        rlutil::setColor(rlutil::BLACK);
         corona(54,8);
         rlutil::locate(42,12);
         cout << "  FELICIDADES " << nombre1 << " GANASTE EL JUEGO!!!" <<endl;
         rlutil::anykey();
-        rlutil::setBackgroundColor(rlutil::BLACK);
         system("cls");
+        rlutil::setBackgroundColor(rlutil::BLACK);
         rlutil::setColor(rlutil::WHITE);
         rlutil::locate(35, 3);
         cout << " ================================================================" << endl;
@@ -282,16 +280,15 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
     else if (puntajeTotalJ2>=puntajeTotalJ1 && tiradasJ1 >= tiradasJ2)
     {
         actualizarRanking(puntajeTotalJ2, nombre2,puntajeMayor, nombreDelMayorPuntaje);
-        rlutil::setBackgroundColor(rlutil::WHITE);
         system("cls");
-        rlutil::setColor(rlutil::BLACK);
         corona(54,8);
         rlutil::locate(42,12);
         cout << "  FELICIDADES " << nombre2 << " GANASTE EL JUEGO!!!" <<endl;
         rlutil::anykey();
+        rlutil::resetColor();
         rlutil::setBackgroundColor(rlutil::BLACK);
-        system("cls");
         rlutil::setColor(rlutil::WHITE);
+        system("cls");
         rlutil::locate(35, 3);
         cout << " ================================================================" << endl;
         rlutil::locate(40, 4);

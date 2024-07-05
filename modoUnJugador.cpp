@@ -81,7 +81,7 @@ void modoUnJugador(int puntajeMayor[], string nombreDelMayorPuntaje[])
             puntajeTiradas[tirada] = puntaje(Dados); /// CON LA FUNCION PUNTAJE VERIFICAMOS CUAL ES EL RESULTADO DEL PUNTAJE Y ESE RESULTADO LO GUARDAMOS EN CADA TIRADA
 
             if(puntajeTiradas[tirada] == 0 || puntajeTiradas[tirada] == 100){ /// SI EN LA TIRADA SALE SEXTETO DE 6 O ESCALERA ENTONCES FINALIZAMOS NUESTRO WHILE DE TIRADAS
-                tirada = 3;
+                tirada = 2;
             }
 
             if(puntajeTiradas[tirada] == 0 ){

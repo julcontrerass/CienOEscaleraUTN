@@ -74,7 +74,7 @@ void Simulacion(int puntajeMayor[], string nombreDelMayorPuntaje[])
             puntajeTiradas[tirada] = puntaje(Dados);
             if(puntajeTiradas[tirada] == 0 || puntajeTiradas[tirada] == 100)
             {
-                tirada = 3;
+                tirada = 2;
             }
 
             if(puntajeTiradas[tirada] == 0)
