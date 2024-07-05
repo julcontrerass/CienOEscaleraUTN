@@ -33,7 +33,6 @@ void NumDado (int numero, int posx, int posy)
         // POR EJEMPLO EN LA POSICION DE X 4 Y Y 2 PINTAMOS UN CUADRADITO CON (char)254
         rlutil::locate(posx+3,posy+1);
         cout << (char)254;
-        valor = 1;
         break;
     case 2:
         rlutil::locate(posx+1,posy);
@@ -41,7 +40,6 @@ void NumDado (int numero, int posx, int posy)
         rlutil::locate(posx+5,posy+2);
         cout << (char) 223;
         break;
-        valor = 2;
     case 3:
         rlutil::locate(posx+1,posy);
         cout << (char) 220;
@@ -49,7 +47,6 @@ void NumDado (int numero, int posx, int posy)
         cout << (char) 223;
         rlutil::locate(posx+3,posy+1);
         cout << (char)254;
-        valor = 3;
         break;
     case 4:
         rlutil::locate(posx+1,posy);
@@ -60,7 +57,6 @@ void NumDado (int numero, int posx, int posy)
         cout << (char) 223;
         rlutil::locate(posx+5,posy+2);
         cout << (char) 223;
-        valor = 4;
         break;
     case 5:
         rlutil::locate(posx+1,posy);
@@ -73,7 +69,6 @@ void NumDado (int numero, int posx, int posy)
         cout << (char) 223;
         rlutil::locate(posx+5,posy+2);
         cout << (char) 223;
-        valor = 5;
         break;
     case 6:
         rlutil::locate(posx+1,posy);
@@ -88,7 +83,6 @@ void NumDado (int numero, int posx, int posy)
         cout << (char) 220;
         rlutil::locate(posx+3,posy+2);
         cout << (char) 223;
-        valor = 6;
         break;
     }
 }
