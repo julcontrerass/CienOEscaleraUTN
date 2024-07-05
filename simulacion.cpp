@@ -124,7 +124,7 @@ void Simulacion(int puntajeMayor[], string nombreDelMayorPuntaje[])
     rlutil::locate(45, 9);
     cout << "| 1- EMPEZAR SIMULACION DE NUEVO|" << endl;
     rlutil::locate(45, 10);
-    cout << "| 3- MENU                       |" << endl;
+    cout << "| 2- MENU                       |" << endl;
     rlutil::locate(45, 11);
     cout << "| 0- FINALIZAR JUEGO            |" << endl;
     rlutil::locate(45, 12);

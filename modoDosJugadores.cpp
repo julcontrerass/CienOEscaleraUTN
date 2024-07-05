@@ -32,15 +32,18 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
     rlutil::locate (55,16);
     cout << "- ";
     getline(cin,nombre2);
-    if(nombre1=="" || nombre2 == "" )
+    if(nombre1=="" || nombre2 == "") /// EL USUARIO DEBE DE INGRESAR SI O SI AMBOS NOMBRES
     {
-        rlutil::locate(40, 10);
-        cout << "INGRESE UN NOMBRE O VOLVERA AL MENU PRINCIPAL ..." << endl;
-        rlutil::locate(55, 12);
+        system("cls");
+        rlutil::locate(38, 10);
+        cout << "INGRESE AMBOS NOMBRES SINO VOLVERA AL MENU ..." << endl;
+        rlutil::locate(43, 12);
+        cout << "INGRESE EL NOMBRE DEL PRIMER JUGADOR: ";
+        rlutil::locate(58, 14);
         getline(cin,nombre1);
-        rlutil::locate(40, 14);
-        cout << "INGRESE EL NOMBRE DEL SEGUNDO JUGADOR SINO VUELVE AL MENU ..." << endl;
-        rlutil::locate(55, 16);
+        rlutil::locate(43, 16);
+        cout << "INGRESE EL NOMBRE DEL SEGUNDO JUGADOR: " << endl;
+        rlutil::locate(58, 18);
         getline(cin,nombre2);
         if(nombre1=="" || nombre2 == "" )
         {
@@ -55,7 +58,7 @@ void modoDosJugadores(int puntajeMayor[], string nombreDelMayorPuntaje[])
     cout << " QUIERE INGRESAR UN LIMITE DE RONDAS? " <<endl;
     cout << endl;
     rlutil::locate (54,12);
-    cout << " [ S / N  ]" <<endl;
+    cout << " [ S / N ]" <<endl;
     rlutil::locate (59,14);
     cin >> opcionRondas;
 

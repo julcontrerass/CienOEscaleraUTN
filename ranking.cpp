@@ -28,6 +28,7 @@ void actualizarRanking(int puntaje, string nombre, int puntajeMayor[], string no
 /// CREAMOS PAGINA DE RANKING
 void ranking(int puntajeMayor[], string nombreDelMayorPuntaje[])
 {
+    int opcion;
     system("cls");
     rlutil::locate (40,3);
     cout << " =================================" << endl;
@@ -47,14 +48,13 @@ void ranking(int puntajeMayor[], string nombreDelMayorPuntaje[])
     rlutil::locate (41,18);
     cout << "  ===============================" << endl;
     rlutil::locate (41,19);
-    cout << " | 1- MENU                   |" << endl;
+    cout << " | 1- MENU                       |" << endl;
     rlutil::locate (41,20);
-    cout << " | 0- FINALIZAR JUEGO        |" << endl;
+    cout << " | 0- FINALIZAR JUEGO            |" << endl;
     rlutil::locate (41,21);
     cout << "  ===============================" << endl;
     rlutil::locate (48,23);
     cout << " INGRESE SU OPCION ";
-    int opcion;
     cin >> opcion;
 
     switch (opcion)

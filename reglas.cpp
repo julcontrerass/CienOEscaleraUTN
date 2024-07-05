@@ -36,11 +36,11 @@ void reglas(int puntajeMayor[], string nombreDelMayorPuntaje[])
     rlutil::locate(1,27);
     cout << "-Suma de dados" << endl ;
     rlutil::locate(1,28);
-    cout << " Suma de los valores de todos los dados Para el ejemplo sería 6+5+5+2+2+1=21" << endl ;
+    cout << " Suma de los valores de todos los dados Para el ejemplo seria 6+5+5+2+2+1=21" << endl ;
     rlutil::locate(1,30);
     cout << "-Sexteto X (X es el numero del dado)" << endl ;
     rlutil::locate(1,31);
-    cout << " 6 dados iguales (menos para el nUmero 6) X*10 puntos " << endl ;
+    cout << " 6 dados iguales (menos para el numero 6) X*10 puntos " << endl ;
     rlutil::locate(1,33);
     cout << "-Escalera " << endl ;
     rlutil::locate(1,34);
