@@ -105,6 +105,15 @@ Esta opción se puede mantener oculta, y habilitarse al momento de la correcció
 
 - Para la defensa de forma virtual todos los integrantes del grupo deben tener activas las cámaras y los micrófonos
 
+# MUESTRA DEL PROYECTO
+
+![menu](https://github.com/user-attachments/assets/80aba379-6c10-4bdb-8436-db0f74a99242)
+![modoUnJugador](https://github.com/user-attachments/assets/d44ff38d-8611-4190-b560-60329314f225)
+![resultadoModoUnJugador](https://github.com/user-attachments/assets/8630a7e6-d835-44de-9ae5-8d2629092029)
+![entreTurnos](https://github.com/user-attachments/assets/68bf8aed-f703-499e-a6b9-cfb1dbe16f27)
+![resultDosJugadores](https://github.com/user-attachments/assets/921f7c2f-72bb-4855-bf71-4f2cfa29126f)
+![muestraDeRanking](https://github.com/user-attachments/assets/f2af5d7f-a3ff-4185-9995-4fe8d44cb63f)
+
 
 ## Participantes
 
